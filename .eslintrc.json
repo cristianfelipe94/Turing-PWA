@@ -1,0 +1,24 @@
+{
+    "extends": ["eslint:recommended", "prettier", "prettier/react"],
+    "plugins": [],
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "env": {
+        "es6": true,
+        "browser": true
+    }
+}
+
+// Parser Options
+// Ecma Version: To use new functions from ES6, Async and Await, etc.
+// Source Type: To use Import and Export from ES6 modules.
+// Ecma Features: JSX, for the app to understand it.
+
+// Env
+// ES6: True, so that the app will understand new functions from ES6.
+// Browser: True, so that the app understands things like, window,document and Global Variables.
