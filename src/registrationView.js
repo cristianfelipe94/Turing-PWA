@@ -36,13 +36,14 @@ class RegistrationView extends Component {
 
     submitUsername (event) {
 
-        console.log(this.state.userName.length);
         event.preventDefault();
-        if (this.state.userName.src && !this.state.userAvatar > "") {
+
+        if (this.state.userAvatar.length || this.state.userName.length !== 0) {
             localStorage.clear();
             localStorage.setItem('savedUsername', JSON.stringify(this.state.userName));
             localStorage.setItem('savedAvatar', JSON.stringify(this.state.userAvatar));
-        } else {
+
+        } else if (this.state.userAvatar.length || this.state.userName.length === 0)  {
             alert("Please make sure you picked a Username and Avatar.");
         };
 
