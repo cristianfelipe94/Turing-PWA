@@ -18,7 +18,7 @@ class RegistrationView extends Component {
             avatarImages: [],
             userAvatar : [],
             userName : [],
-            completedForm : false
+            completedUserSet : false
         };
         this.pickAvatar = this.pickAvatar.bind(this)
         this.usernameKeylog = this.usernameKeylog.bind(this)
@@ -50,9 +50,9 @@ class RegistrationView extends Component {
             localStorage.clear();
             localStorage.setItem('savedUsername', JSON.stringify(this.state.userName));
             localStorage.setItem('savedAvatar', JSON.stringify(this.state.userAvatar));
-            this.setState({completedForm: true});
+            this.setState({completedUserSet: true});
         } else if (this.state.userAvatar.length || this.state.userName.length === 0)  {
-            this.setState({completedForm: false});
+            this.setState({completedUserSet: false});
             alert("Please make sure you picked a Username and Avatar.");
         };
     };
@@ -82,7 +82,7 @@ class RegistrationView extends Component {
                             <input type= "input" id= "username" onChange={this.usernameKeylog}></input>
                             <button onClick= {this.submitUsername}>Ingresar datos</button>
                         </form>
-                        <div className = {`${this.state.completedForm? "openedModal" : "closedModal"}`}>
+                        <div className = {`${this.state.completedUserSet? "openedModal" : "closedModal"}`}>
                             <Router>
                                 <Link to= "/calendar" onClick= {this.reloadRender}>Terminar proceso de Registro</Link>
                             </Router>
