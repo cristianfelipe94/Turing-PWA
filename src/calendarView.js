@@ -21,7 +21,7 @@ class CalendarView extends Component {
             sabado: false,
             domingo: false,
             completedCalendar: false,
-        }
+        };
 
         this.notificationGenerator = this.notificationGenerator.bind(this);
 
@@ -166,9 +166,10 @@ class CalendarView extends Component {
                     </div>
                     <button type="submit" onClick={this.submitDateNotification}>Guardar Calendario</button>
                 </form>
+
                 <div className = {`${this.state.completedCalendar? "openedModal" : "closedModal"}`}>
                     <Router>
-                        <Link to= "/" onClick= {this.reloadRender}>Terminar proceso de Registro</Link>
+                        <Link to= "/subject" onClick= {this.reloadRender}>Terminar registro de Calendario.</Link>
                     </Router>
                 </div>
             </div>
