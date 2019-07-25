@@ -3,17 +3,27 @@ import "./App.css";
 
 import loadImages from "./imagesLoader.js";
 
+import {
+    BrowserRouter as Router,
+    Link
+} from 'react-router-dom';
+
+import './Calendar.css'
+
+
 class RegistrationView extends Component {
     constructor(props) {
         super(props);
         this.state = {
             avatarImages: [],
             userAvatar : [],
-            userName : []
+            userName : [],
+            completedForm : false
         };
         this.pickAvatar = this.pickAvatar.bind(this)
         this.usernameKeylog = this.usernameKeylog.bind(this)
         this.submitUsername = this.submitUsername.bind(this);
+        this.reloadRender = this.reloadRender.bind(this);
     };
 
     componentDidMount() {
@@ -35,23 +45,24 @@ class RegistrationView extends Component {
     };
 
     submitUsername (event) {
-
         event.preventDefault();
-
         if (this.state.userAvatar.length || this.state.userName.length !== 0) {
             localStorage.clear();
             localStorage.setItem('savedUsername', JSON.stringify(this.state.userName));
             localStorage.setItem('savedAvatar', JSON.stringify(this.state.userAvatar));
-
+            this.setState({completedForm: true});
         } else if (this.state.userAvatar.length || this.state.userName.length === 0)  {
+            this.setState({completedForm: false});
             alert("Please make sure you picked a Username and Avatar.");
         };
+    };
 
+    // Class method, will Reload window for Rendering new component.
+    reloadRender () {
+        setTimeout(() => {window.location.reload()}, 100);
     };
 
     render () {
-        console.log(this.state);
-        console.log(localStorage);
         const gallery = this.state.avatarImages.map(({id, src, description}) => {
             return (
                 <button onClick= {this.pickAvatar}>
@@ -69,8 +80,13 @@ class RegistrationView extends Component {
                         <form>
                             <label htmlFor= "username">Nombre de usuario:</label>
                             <input type= "input" id= "username" onChange={this.usernameKeylog}></input>
-                            <button onClick= {this.submitUsername}>Crear usuario</button>
+                            <button onClick= {this.submitUsername}>Ingresar datos</button>
                         </form>
+                        <div className = {`${this.state.completedForm? "openedModal" : "closedModal"}`}>
+                            <Router>
+                                <Link to= "/calendar" onClick= {this.reloadRender}>Terminar proceso de Registro</Link>
+                            </Router>
+                        </div>
                     </div>
                 </header>
             </div>

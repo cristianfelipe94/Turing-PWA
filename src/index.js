@@ -14,6 +14,7 @@ import {
 // View Components.
 import WelcomingView from "./welcomingView.js"
 import RegistrationView from "./registrationView.js"
+import CalendarView from "./calendarView.js" 
 
 // import * as serviceWorker from "../serviceWorker";
 
@@ -25,6 +26,7 @@ class SwitcherDOMComponent extends Component {
                     <Switch>
                         <Route exact path="/" component = {WelcomingView} />
                         <Route exact path="/registration" component = {RegistrationView} />
+                        <Route exact path="/calendar" component = {CalendarView} />
                     </Switch>
                 </Router>
             </div>
