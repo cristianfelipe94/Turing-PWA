@@ -1,0 +1,25 @@
+.subjectEffect {
+    transition: 0.5s;
+    box-shadow: 0px 0px 4px black;
+}
+
+.subjectEffect:hover {
+    background-color: #009688;
+    transition: 0.5s;
+    box-shadow: 0px 0px 2px black;
+    color: white;
+}
+
+.openedModal {
+    opacity: 1;
+    display: block;
+    height: 200px;
+    width: 200px;
+}
+
+.closedModal {
+    opacity: 0;
+    display: block;
+    height: 0px;
+    width: 0px;
+}

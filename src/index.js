@@ -12,9 +12,11 @@ import {
 } from 'react-router-dom';
 
 // View Components.
-import WelcomingView from "./welcomingView.js"
-import RegistrationView from "./registrationView.js"
-import CalendarView from "./calendarView.js" 
+import WelcomingView from "./welcomingView.js";
+import RegistrationView from "./registrationView.js";
+import CalendarView from "./calendarView.js";
+import SubjectView from "./subjectView.js";
+import HomeView from "./homeView.js";
 
 // import * as serviceWorker from "../serviceWorker";
 
@@ -24,9 +26,11 @@ class SwitcherDOMComponent extends Component {
             <div>
                 <Router>
                     <Switch>
-                        <Route exact path="/" component = {WelcomingView} />
-                        <Route exact path="/registration" component = {RegistrationView} />
-                        <Route exact path="/calendar" component = {CalendarView} />
+                        <Route exact path = "/" component = {WelcomingView} />
+                        <Route exact path = "/registration" component = {RegistrationView} />
+                        <Route exact path = "/calendar" component = {CalendarView} />
+                        <Route exact path = "/subject" component = {SubjectView} />
+                        <Route exact path = "/home" component = {HomeView} />
                     </Switch>
                 </Router>
             </div>

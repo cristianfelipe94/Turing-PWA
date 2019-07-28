@@ -5,8 +5,6 @@ import React, { Component } from "react";
 import {
   BrowserRouter as Router,
   Link,
-  Route,
-  Switch,
 } from 'react-router-dom';
 
 // Classes from a CSS file.
@@ -48,7 +46,6 @@ class WelcomingView extends Component {
 
   render() {
     
-
     return (
       <div className="App">
         <header className="App-header">
@@ -60,8 +57,7 @@ class WelcomingView extends Component {
           </p>
 
           <Router>
-          
-            <Link to= {`${this.state.userSigned? "/calendar" : "/registration"}`} onClick= {this.reloadRender}>Ir al proceso de Registro.</Link>
+            <Link to= {`${this.state.userSigned? "/home" : "/registration"}`} onClick= {this.reloadRender}>Ir al proceso de Registro.</Link>
           </Router>
 
           <div>

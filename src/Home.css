@@ -1,0 +1,17 @@
+.markedfalse {
+    color: red;
+    display: inline-block;
+    margin: 10px;
+}
+
+.markedtrue {
+    color: green;
+    display: inline-block;
+    margin: 10px;
+}
+
+.listCalendar {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
