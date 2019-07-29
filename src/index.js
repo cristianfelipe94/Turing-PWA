@@ -14,7 +14,9 @@ import {
 // View Components.
 import WelcomingView from "./welcomingView.js";
 import RegistrationView from "./registrationView.js";
+import RegistrationOptions from "./registrationOptions.js";
 import CalendarView from "./calendarView.js";
+import CalendarOptions from "./calendarOptions";
 import SubjectView from "./subjectView.js";
 import HomeView from "./homeView.js";
 
@@ -28,7 +30,9 @@ class SwitcherDOMComponent extends Component {
                     <Switch>
                         <Route exact path = "/" component = {WelcomingView} />
                         <Route exact path = "/registration" component = {RegistrationView} />
+                        <Route exact path = "/options/registration" component = {RegistrationOptions} />
                         <Route exact path = "/calendar" component = {CalendarView} />
+                        <Route exact path = "/options/calendar" component = {CalendarOptions} />
                         <Route exact path = "/subject" component = {SubjectView} />
                         <Route exact path = "/home" component = {HomeView} />
                     </Switch>

@@ -93,11 +93,11 @@ class HomeView extends Component {
                 </ul>
                 <div>
                     <Router>
-                        <Link to= "/calendar" onClick= {this.reloadRender}>Cambiar Calendario</Link>
+                        <Link to= "/options/calendar" onClick= {this.reloadRender}>Cambiar Calendario</Link>
                         <br/>
-                        <Link to= "/registration" onClick= {this.reloadRender}>Editar Nombre de Usuario</Link>
+                        <Link to= "/options/registration" onClick= {this.reloadRender}>Editar Nombre de Usuario</Link>
                         <br/>
-                        <Link to= "/subject" onClick= {this.reloadRender}>Cambiar materia de Estudio</Link>
+                        <Link to= "/options/subject" onClick= {this.reloadRender}>Cambiar materia de Estudio</Link>
                     </Router>
                 </div>
             </div>
