@@ -19,6 +19,7 @@ import CalendarView from "./calendarView.js";
 import CalendarOptions from "./calendarOptions";
 import SubjectView from "./subjectView.js";
 import HomeView from "./homeView.js";
+import ArticleView from "./articleView.js";
 
 // import * as serviceWorker from "../serviceWorker";
 
@@ -35,6 +36,7 @@ class SwitcherDOMComponent extends Component {
                         <Route exact path = "/options/calendar" component = {CalendarOptions} />
                         <Route exact path = "/subject" component = {SubjectView} />
                         <Route exact path = "/home" component = {HomeView} />
+                        <Route exact path = "/article" component = {ArticleView} />
                     </Switch>
                 </Router>
             </div>

@@ -1,0 +1,28 @@
+{
+    "articles": [
+        {
+            "subject": "html",
+            "title": "Etiquetas HTML",
+            "content": "Las etiquetas HTML sirven para...",
+            "referencias": [
+                "https://developer.mozilla.org/es/docs/HTML/HTML5/HTML5_lista_elementos","https://lenguajehtml.com/p/html/semantica/etiquetas-html-de-texto"
+            ]
+        },
+        {
+            "subject": "css",
+            "title": "Selectores CSS",
+            "content": "Los selectores en CSS hacen un papel importante ya que...",
+            "referencias": [
+                "https://uniwebsidad.com/libros/css/capitulo-2/selectores-basicos","https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048"
+            ]
+        },
+        {
+            "subject": "javascript",
+            "title": "Funciones en Javascript",
+            "content": "Javascript cuenta con funciones para realizar tareas...",
+            "referencias": [
+                "https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones","https://uniwebsidad.com/libros/javascript/capitulo-4/funciones"
+            ]
+        }
+    ]
+}

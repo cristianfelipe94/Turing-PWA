@@ -98,6 +98,8 @@ class HomeView extends Component {
                         <Link to= "/options/registration" onClick= {this.reloadRender}>Editar Nombre de Usuario</Link>
                         <br/>
                         <Link to= "/options/subject" onClick= {this.reloadRender}>Cambiar materia de Estudio</Link>
+                        <br/>
+                        <Link to= "/article" onClick= {this.reloadRender}>Leer artículo</Link>
                     </Router>
                 </div>
             </div>
