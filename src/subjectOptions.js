@@ -7,7 +7,7 @@ import {
 
 import "./Subject.css";
 
-class SubjectView extends Component {
+class SubjectOptions extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -41,13 +41,7 @@ class SubjectView extends Component {
     };
 
     submitSubject () {
-        localStorage.setItem('htmlUserStored', JSON.stringify(this.state.htmlSubject));
-        localStorage.setItem('cssUserStored', JSON.stringify(this.state.cssSubject));
-        localStorage.setItem('jsUserStored', JSON.stringify(this.state.jsSubject));
-
-        localStorage.setItem('savedUserHTMLArticle', JSON.stringify(0));
-        localStorage.setItem('savedUserCSSArticle', JSON.stringify(0));
-        localStorage.setItem('savedUserJSArticle', JSON.stringify(0));
+        localStorage.setItem('subjectInformation', JSON.stringify(this.state));
     };
 
     render () {
@@ -65,6 +59,7 @@ class SubjectView extends Component {
             margin: "10px",
             cursor: "pointer",
         };
+        
         
         return (
             <div>                
@@ -89,7 +84,7 @@ class SubjectView extends Component {
                     <h2>Javascript</h2>
                     <p>Lenguaje de programación. Comportamiento y funcionalidad.</p>
                     <div style= {spriteContainer}>
-                        <img src= "./assets/subjects/subjects.png" style= {{position: "absolute", right: "1px"}} alt= "Javascript logo." />
+                        <img src= ".\assets\avatares/imgicon1.jpg" style= {{position: "absolute", right: "1px"}} alt= "Javascript logo." />
                     </div>
                 </div>
 
@@ -104,4 +99,4 @@ class SubjectView extends Component {
     };
 };
 
-export default SubjectView;
+export default SubjectOptions;

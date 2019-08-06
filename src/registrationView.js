@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import "./Subject.css";
 
 import loadImages from "./imagesLoader.js";
 
@@ -7,8 +8,6 @@ import {
     BrowserRouter as Router,
     Link
 } from 'react-router-dom';
-
-import './Calendar.css'
 
 
 class RegistrationView extends Component {
@@ -65,7 +64,7 @@ class RegistrationView extends Component {
     render () {
         const gallery = this.state.avatarImages.map(({id, src, description}) => {
             return (
-                <button onClick= {this.pickAvatar}>
+                <button onClick= {this.pickAvatar} className = {this.state.userAvatar.id === id? "avatarSelected" : "avatarUnselected"}>
                     <img key={id} src={src} alt={description} id={id}/>
                 </button>
             );
@@ -84,7 +83,7 @@ class RegistrationView extends Component {
                         </form>
                         <div className = {`${this.state.completedUserSet? "openedModal" : "closedModal"}`}>
                             <Router>
-                                <Link to= "/calendar" onClick= {this.reloadRender}>Terminar proceso de Registro</Link>
+                                <Link to= "/subject" onClick= {this.reloadRender}>Terminar proceso de Registro</Link>
                             </Router>
                         </div>
                     </div>
