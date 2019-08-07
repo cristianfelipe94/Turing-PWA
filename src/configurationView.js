@@ -100,10 +100,9 @@ class ConfigurationView extends Component {
     };
 
     render () {
-
         const gallery = this.state.avatarImages.map(({id, src, description}) => {
             return (
-                <button onClick= {this.pickAvatar} className = {this.state.userAvatar.id === id? "avatarSelected" : "avatarUnselected"}>
+                <button key={"button"+id} onClick= {this.pickAvatar} className = {this.state.userAvatar.id !== id? "avatarUnselected" : "avatarSelected"}>
                     <img key={id} src={src} alt={description} id={id}/>
                 </button>
             );

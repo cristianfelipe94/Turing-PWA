@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 
+import dataLibrary from "./dataLibrary.json";
+
 import {
     BrowserRouter as Router,
     Link
@@ -17,31 +19,118 @@ class HomeView extends Component {
             htmlSubject: false,
             cssSubject: false,
             jsSubject: false,
+
+            subjectToRead: "",
+            currentArticle: 0,
+
+            dataLibraryToRender : []
         };
 
         this.reloadRender = this.reloadRender.bind(this);
     };
 
-    componentDidMount() {
-        const userNameStored = JSON.parse(localStorage.getItem("savedUsername"));
-        const userAvatarStored = JSON.parse(localStorage.getItem("savedAvatar"));
+    componentWillMount() {
+        setTimeout(() => {
+            // Get username and avatar.
+            const userNameStored = JSON.parse(localStorage.getItem("savedUsername"));
+            const userAvatarStored = JSON.parse(localStorage.getItem("savedAvatar"));
+            
+            // Get Boolean, subject that was picked. 
+            const htmlUserStored = JSON.parse(localStorage.getItem("htmlUserStored"));
+            const cssUserStored = JSON.parse(localStorage.getItem("cssUserStored"));
+            const jsUserStored = JSON.parse(localStorage.getItem("jsUserStored"));
+    
+            // Get current article index.
+            const userArticleHTMLStored = JSON.parse(localStorage.getItem("savedUserHTMLArticle"));
+            const userArticleCSSStored = JSON.parse(localStorage.getItem("savedUserCSSArticle"));
+            const userArticleJSStored = JSON.parse(localStorage.getItem("savedUserJSArticle"));
+    
+            this.setState({
+                htmlSubject: htmlUserStored,
+            }, () => {
+                if (htmlUserStored === true) {
+                    // console.log("Test state", this.state.subjectJS);
+                    this.setState({
+                        subjectToRead: "html"
+                    }, () => {
+                        // console.log("Test state", this.state.subjectToRead);
+                        this.setState({
+                            currentArticle: userArticleHTMLStored
+                        }, () => {
+                            localStorage.setItem('currenDataArticle', JSON.stringify(this.state.currentArticle));
+                            localStorage.setItem('currentsubjectToRead', JSON.stringify(this.state.subjectToRead));
+                        });
+                    });
+                };
+            });
+    
+            this.setState({
+                cssSubject: cssUserStored
+            }, () => {
+                if (cssUserStored === true) {
+                    // console.log("Test state", this.state.subjectJS);
+                    this.setState({
+                        subjectToRead: "css"
+                    }, () => {
+                        // console.log("Test state", this.state.subjectToRead);
+                        this.setState({
+                            currentArticle: userArticleCSSStored
+                        }, () => {
+                            localStorage.setItem('currenDataArticle', JSON.stringify(this.state.currentArticle));
+                            localStorage.setItem('currentsubjectToRead', JSON.stringify(this.state.subjectToRead));
+                        });
+                    });
+                };
+            });
+    
+            this.setState({
+                jsSubject: jsUserStored,
+            }, () => {
+                if (jsUserStored === true) {
+                    // console.log("Test state", this.state.subjectJS);
+                    this.setState({
+                        subjectToRead: "javascript"
+                    }, () => {
+                        // console.log("Test state", this.state.subjectToRead);
+                        this.setState({
+                            currentArticle: userArticleJSStored
+                        }, () => {
+                            localStorage.setItem('currenDataArticle', JSON.stringify(this.state.currentArticle));
+                            localStorage.setItem('currentsubjectToRead', JSON.stringify(this.state.subjectToRead));
+                        });
+                    });
+                };
+            });
+    
+            this.setState({
+                userName: userNameStored,
+                userAvatar: userAvatarStored,
+            });
+        }, 10);
+    };
 
-        const htmlUserStored = JSON.parse(localStorage.getItem("htmlUserStored"));
-        const cssUserStored = JSON.parse(localStorage.getItem("cssUserStored"));
-        const jsUserStored = JSON.parse(localStorage.getItem("jsUserStored"));
-
-        this.setState({
-            userName: userNameStored,
-            userAvatar: userAvatarStored,
-            htmlSubject: htmlUserStored,
-            cssSubject: cssUserStored,
-            jsSubject: jsUserStored,
-        });
+    componentDidMount () {
+        setTimeout(() => {
+            this.renderLibrary();
+        }, 20);
     };
 
     // Class method, will Reload window for Rendering new component.
     reloadRender () {
         setTimeout(() => {window.location.reload()}, 100);
+    };
+
+    renderLibrary() {
+        dataLibrary.articles.forEach(element => {
+            if (element.subject === this.state.subjectToRead) {
+                this.setState({
+                    dataLibraryToRender: this.state.dataLibraryToRender.concat(element)
+                }, () => {
+                    // console.log("Found match: ",element, this.state.dataLibraryToRender);
+                    localStorage.setItem('savedDataLibrary', JSON.stringify(this.state.dataLibraryToRender));
+                });
+            };
+        });
     };
 
     render() {

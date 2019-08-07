@@ -69,7 +69,7 @@ class SubjectView extends Component {
         return (
             <div>                
                 <h1>Elige una expecialidad</h1>
-                <div style= {subjectContainer} className= "subjectEffect" onClick= {this.htmlSelector}>
+                <div style= {subjectContainer} className = {this.state.htmlSubject? "subjectSelected" : "subjectEffect"} onClick= {this.htmlSelector}>
                     <h2>HTML</h2>
                     <p>Lenguaje de etiquetas, Contenido y estructura.</p>
                     <div style= {spriteContainer}>
@@ -77,7 +77,7 @@ class SubjectView extends Component {
                     </div>
                 </div>
                 
-                <div style= {subjectContainer} className= "subjectEffect" onClick= {this.cssSelector}>
+                <div style= {subjectContainer} className = {this.state.cssSubject? "subjectSelected" : "subjectEffect"} onClick= {this.cssSelector}>
                     <h2>CSS</h2>
                     <p>Lenguaje para hojas de estilos. Estilos y apariencia.</p>
                     <div style= {spriteContainer}>
@@ -85,7 +85,7 @@ class SubjectView extends Component {
                     </div>
                 </div>
                 
-                <div style= {subjectContainer} className= "subjectEffect" onClick= {this.jsSelector}>
+                <div style= {subjectContainer} className = {this.state.jsSubject? "subjectSelected" : "subjectEffect"} onClick= {this.jsSelector}>
                     <h2>Javascript</h2>
                     <p>Lenguaje de programación. Comportamiento y funcionalidad.</p>
                     <div style= {spriteContainer}>
