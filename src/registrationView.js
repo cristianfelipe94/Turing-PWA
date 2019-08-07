@@ -17,7 +17,6 @@ class RegistrationView extends Component {
             avatarImages: [],
             userAvatar : [],
             userName : [],
-            completedUserSet : false
         };
         this.pickAvatar = this.pickAvatar.bind(this)
         this.usernameKeylog = this.usernameKeylog.bind(this)
@@ -43,15 +42,13 @@ class RegistrationView extends Component {
         this.setState({userName: getUserName});
     };
 
-    submitUsername (event) {
-        event.preventDefault();
+    submitUsername () {
         if (this.state.userAvatar.length || this.state.userName.length !== 0) {
             localStorage.clear();
             localStorage.setItem('savedUsername', JSON.stringify(this.state.userName));
             localStorage.setItem('savedAvatar', JSON.stringify(this.state.userAvatar));
-            this.setState({completedUserSet: true});
+            this.reloadRender ();
         } else if (this.state.userAvatar.length || this.state.userName.length === 0)  {
-            this.setState({completedUserSet: false});
             alert("Please make sure you picked a Username and Avatar.");
         };
     };
@@ -73,33 +70,29 @@ class RegistrationView extends Component {
 
         return (
             <div className= "app-registration">
-                <div>
-                    <h1>Elige un avatar</h1>
-                    <div className= "app-avatar-content">
-                        {gallery}
-                    </div>
-                    <form style= {{padding: "20px"}}>
-                        <label htmlFor= "username" style= {{display: "block", padding: "10px"}}>Elige un nombre de usuario:</label>
-                        <input type= "input" id= "username" onChange={this.usernameKeylog} placeholder= "Escribe tu nombre de usuario aquí" className= "username-input"></input>
-                        <button className="app-action" style= {{border: "none", textTransform: "unset", margin: "15px 0"}}onClick= {this.submitUsername}>Registrarme</button>
-                    </form>
-                    <div className = {`${this.state.completedUserSet? "openedModal" : "closedModal"}`}>
-                        <Router>
-                            <Link to= "/subject" onClick= {this.reloadRender}>Terminar proceso de Registro</Link>
-                        </Router>
-                    </div>
+                <h1 style={{fontSize:"1.8em"}}>Elige un avatar</h1>
+                <div className= "app-avatar-content">
+                    {gallery}
+                </div>
+                <form style= {{padding: "20px"}}>
+                    <label htmlFor= "username" style= {{display: "block", padding: "10px", fontSize: "1.4em", fontWeight: "bold"}}>Elige un nombre de usuario:</label>
+                    <input type= "input" id= "username" onChange={this.usernameKeylog} placeholder= "Escribe tu nombre de usuario aquí" className= "username-input"></input>
+                    <Router>
+                        <Link className="app-steps" to= "/subject" onClick= {this.submitUsername}>Registrarme</Link>
+                    </Router>
+                </form>
                     <div className= "app-developers">
                         <p>
                         Desarrollado por:
                         </p>
                         <div className= "app-developers-links">
                         <a className="app-link" href="https://github.com/YethPenado" target="_blank" rel="noopener noreferrer">
-                        Yeth Penado.
+                        Yeth Penado
                         </a>
-                        <a className="app-link" style={{marginLeft: '20px'}} href="https://github.com/cristianfelipe94" target="_blank" rel="noopener noreferrer">
-                        Cristian Calderón.
+                        <p style= {{display: "inline-block"}}>|</p>
+                        <a className="app-link" href="https://github.com/cristianfelipe94" target="_blank" rel="noopener noreferrer">
+                        Cristian Calderón
                         </a>
-                        </div>
                     </div>
                 </div>
             </div>

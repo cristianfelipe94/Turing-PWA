@@ -51,54 +51,77 @@ class SubjectView extends Component {
     };
 
     render () {
-        const spriteContainer = {
-            width: "151px",
-            overflow: "hidden",
-            height: "165px",
-            position: "relative",
-        };
-
         const subjectContainer = {
-            width: "25%",
+            width: "180px",
             display: "inline-block",
             padding: "5px",
             margin: "10px",
             cursor: "pointer",
+            height: "180px",
+            borderRadius: "50%",
+            float: "left",
         };
+
+        const subjectIcon = {
+            width: "60px",
+            margin: "0 60px",
+        }
         
         return (
-            <div>                
-                <h1>Elige una expecialidad</h1>
-                <div style= {subjectContainer} className = {this.state.htmlSubject? "subjectSelected" : "subjectEffect"} onClick= {this.htmlSelector}>
-                    <h2>HTML</h2>
-                    <p>Lenguaje de etiquetas, Contenido y estructura.</p>
-                    <div style= {spriteContainer}>
-                        <img src= "./assets/subjects/subjects.png" alt= "HTML logo." />
+            <div className= "app-subject">
+                <div>
+                    <h1 style= {{textAlign: "center"}}>
+                        Elige la materia que te interesa estudiar
+                    </h1>
+                    <div style = {{margin: "40px 40px 10px"}}>
+                        <p>
+                            <span style= {{fontWeight: "bold"}}>Consejo: </span> Si eres un estudiante principiante, te recomendamos empezar por estudiar HTML, luego CSS y finalmente Javascript.
+                        </p>
+                        <p>
+                            Si no estás segur@ de tu nivel de conocimiento, o deseas cambiar de materia más adelante, ¡no te preocupes! Siempre puedes cambiar tus ajustes en la sección de Configuración.
+                        </p>
                     </div>
                 </div>
-                
-                <div style= {subjectContainer} className = {this.state.cssSubject? "subjectSelected" : "subjectEffect"} onClick= {this.cssSelector}>
-                    <h2>CSS</h2>
-                    <p>Lenguaje para hojas de estilos. Estilos y apariencia.</p>
-                    <div style= {spriteContainer}>
-                        <img src= "./assets/subjects/subjects.png" style= {{position: "absolute", right: "-189px"}} alt= "CSS logo." />
+                <div>
+                    <div style= {subjectContainer} className = {this.state.htmlSubject? "subjectSelected" : "subjectEffect"} onClick= {this.htmlSelector}>
+                        <h2 style= {{textAlign: "center", margin: "15px 0px 5px", fontSize: "20px"}}>HTML</h2>
+                        <p style = {{textAlign: "center", padding: "10px", margin: "0"}}>Lenguaje de etiquetas</p>
+                        <img src= "./assets/subjects/html.png" alt= "HTML logo." style= {subjectIcon} />
                     </div>
-                </div>
-                
-                <div style= {subjectContainer} className = {this.state.jsSubject? "subjectSelected" : "subjectEffect"} onClick= {this.jsSelector}>
-                    <h2>Javascript</h2>
-                    <p>Lenguaje de programación. Comportamiento y funcionalidad.</p>
-                    <div style= {spriteContainer}>
-                        <img src= "./assets/subjects/subjects.png" style= {{position: "absolute", right: "1px"}} alt= "Javascript logo." />
+                    
+                    <div style= {subjectContainer} className = {this.state.cssSubject? "subjectSelected" : "subjectEffect"} onClick= {this.cssSelector}>
+                        <h2 style= {{textAlign: "center", margin: "15px 0px 5px", fontSize: "20px"}}>CSS</h2>
+                        <p style = {{textAlign: "center", padding: "10px", margin: "0"}}>Lenguaje para hojas de estilos</p>
+                        <img src= "./assets/subjects/css.png" alt= "CSS logo." style= {subjectIcon}/>
+                    </div>
+                    
+                    <div style= {subjectContainer} className = {this.state.jsSubject? "subjectSelected" : "subjectEffect"} onClick= {this.jsSelector}>
+                        <h2 style= {{textAlign: "center", margin: "15px 0px 5px", fontSize: "20px"}}>Javascript</h2>
+                        <p style = {{textAlign: "center", padding: "10px", margin: "0"}}>Lenguaje de programación</p>
+                        <img src= "./assets/subjects/js.png" alt= "Javascript logo." style= {subjectIcon}/>
                     </div>
                 </div>
 
                 <div className = {`${this.state.completedSubject? "openedModal" : "closedModal"}`}>
                     <Router>
-                        <Link to= "/home" onClick= {this.reloadRender}>Todo listo.</Link>
+                        <Link className="app-action" to= "/home" onClick= {this.reloadRender}>Todo listo</Link>
                     </Router>
                 </div>
 
+                <div className= "app-developers">
+                    <p>
+                    Desarrollado por:
+                    </p>
+                    <div className= "app-developers-links">
+                    <a className="app-link" href="https://github.com/YethPenado" target="_blank" rel="noopener noreferrer">
+                    Yeth Penado
+                    </a>
+                    <p style= {{display: "inline-block"}}>|</p>
+                    <a className="app-link" href="https://github.com/cristianfelipe94" target="_blank" rel="noopener noreferrer">
+                    Cristian Calderón
+                    </a>
+                    </div>
+                </div>
             </div>
         );
     };

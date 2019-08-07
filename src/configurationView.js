@@ -33,12 +33,7 @@ class ConfigurationView extends Component {
         this.cssSelector = this.cssSelector.bind(this);
         this.jsSelector = this.jsSelector.bind(this);
 
-        this.consoleLogin = this.consoleLogin.bind(this);
     };
-
-    consoleLogin () {
-        console.log(this.state);
-    }
 
     componentDidMount() {
         const images = loadImages();
@@ -100,72 +95,80 @@ class ConfigurationView extends Component {
     };
 
     render () {
+        const avatarSelectedId = this.state.userAvatar.id;
         const gallery = this.state.avatarImages.map(({id, src, description}) => {
             return (
-                <button key={"button"+id} onClick= {this.pickAvatar} className = {this.state.userAvatar.id !== id? "avatarUnselected" : "avatarSelected"}>
+                <button key={"button"+id} onClick= {this.pickAvatar} className = {avatarSelectedId !== id? "avatarUnselected, avatar-btn" : "avatarSelected,  avatar-btn"}>
                     <img key={id} src={src} alt={description} id={id}/>
                 </button>
             );
         });
 
-        const spriteContainer = {
-            width: "151px",
-            overflow: "hidden",
-            height: "165px",
-            position: "relative",
-        };
-
         const subjectContainer = {
-            width: "25%",
+            width: "180px",
             display: "inline-block",
             padding: "5px",
             margin: "10px",
             cursor: "pointer",
+            height: "180px",
+            borderRadius: "50%",
+            float: "left",
         };
 
+        const subjectIcon = {
+            width: "60px",
+            margin: "0 60px",
+        }
+
         return (
-            <div className= "App">
-                <header className= "App-header">
-                    <div>
-                        <h1 onClick = {this.consoleLogin}>Registration</h1>
-                        {gallery}
-                        <form>
-                            <label htmlFor= "username">Nombre de usuario:</label>
-                            <input type= "input" id= "username" onChange={this.usernameKeylog} value= {this.state.userName}></input>
-                        </form>
-
-                        <div>                
-                            <h1>Elige una expecialidad</h1>
-                            <div style= {subjectContainer} className = {this.state.htmlSubject? "subjectSelected" : "subjectEffect"} onClick= {this.htmlSelector}>
-                                <h2>HTML</h2>
-                                <p>Lenguaje de etiquetas, Contenido y estructura.</p>
-                                <div style= {spriteContainer}>
-                                    <img src= "./assets/subjects/subjects.png" alt= "HTML logo." />
-                                </div>
-                            </div>
-                            
-                            <div style= {subjectContainer} className = {this.state.cssSubject? "subjectSelected" : "subjectEffect"} onClick= {this.cssSelector}>
-                                <h2>CSS</h2>
-                                <p>Lenguaje para hojas de estilos. Estilos y apariencia.</p>
-                                <div style= {spriteContainer}>
-                                    <img src= "./assets/subjects/subjects.png" style= {{position: "absolute", right: "-189px"}} alt= "CSS logo." />
-                                </div>
-                            </div>
-                            
-                            <div style= {subjectContainer} className= {this.state.jsSubject? "subjectSelected" : "subjectEffect"} onClick= {this.jsSelector}>
-                                <h2>Javascript</h2>
-                                <p>Lenguaje de programación. Comportamiento y funcionalidad.</p>
-                                <div style= {spriteContainer}>
-                                    <img src= ".\assets\subjects/subjects.png" style= {{position: "absolute", right: "1px"}} alt= "Javascript logo." />
-                                </div>
-                            </div>
-
-                            <Router>
-                                <Link to= "/home" style = {{display: "inline-block"}} onClick= {this.reloadRender}>Terminar proceso edición de Registro</Link>
-                            </Router>
-                        </div>
+            <div className= "app-configuration">
+                <h1>Configuración</h1>
+                <img src= {this.state.userAvatar.src} alt= "User avatar." style= {{width: "80px"}} />
+                <div>
+                    {gallery}
+                </div>
+                <form style= {{padding: "20px"}}>
+                    <label htmlFor= "username" style= {{display: "block", padding: "10px", fontSize: "1.4em", fontWeight: "bold"}}>Cambiar nombre de usuario:</label>
+                    <input type= "input" id= "username" onChange={this.usernameKeylog} value= {this.state.userName} style= {{backgroundColor: "transparent",border: "none", borderBottom: "1px solid white", color: "white", width: "100%", fontSize: "16px"}}></input>
+                </form>
+                <div>
+                    <div style= {subjectContainer} className = {this.state.htmlSubject? "subjectSelected" : "subjectEffect"} onClick= {this.htmlSelector}>
+                        <h2 style= {{textAlign: "center", margin: "15px 0px 5px", fontSize: "20px"}}>HTML</h2>
+                        <p style = {{textAlign: "center", padding: "10px", margin: "0"}}>Lenguaje de etiquetas</p>
+                        <img src= "./assets/subjects/html.png" alt= "HTML logo." style= {subjectIcon} />
                     </div>
-                </header>
+                    
+                    <div style= {subjectContainer} className = {this.state.cssSubject? "subjectSelected" : "subjectEffect"} onClick= {this.cssSelector}>
+                        <h2 style= {{textAlign: "center", margin: "15px 0px 5px", fontSize: "20px"}}>CSS</h2>
+                        <p style = {{textAlign: "center", padding: "10px", margin: "0"}}>Lenguaje para hojas de estilos</p>
+                        <img src= "./assets/subjects/css.png" alt= "CSS logo." style= {subjectIcon}/>
+                    </div>
+                    
+                    <div style= {subjectContainer} className = {this.state.jsSubject? "subjectSelected" : "subjectEffect"} onClick= {this.jsSelector}>
+                        <h2 style= {{textAlign: "center", margin: "15px 0px 5px", fontSize: "20px"}}>Javascript</h2>
+                        <p style = {{textAlign: "center", padding: "10px", margin: "0"}}>Lenguaje de programación</p>
+                        <img src= "./assets/subjects/js.png" alt= "Javascript logo." style= {subjectIcon}/>
+                    </div>
+                </div>
+                <div>                
+                    <Router>
+                        <Link to= "/home" className="app-action" style = {{display: "inline-block"}}onClick= {this.reloadRender}>Guardar y salir</Link>
+                    </Router>
+                </div>
+                <div className= "app-developers">
+                    <p>
+                    Desarrollado por:
+                    </p>
+                    <div className= "app-developers-links">
+                    <a className="app-link" href="https://github.com/YethPenado" target="_blank" rel="noopener noreferrer">
+                    Yeth Penado
+                    </a>
+                    <p style= {{display: "inline-block"}}>|</p>
+                    <a className="app-link" href="https://github.com/cristianfelipe94" target="_blank" rel="noopener noreferrer">
+                    Cristian Calderón
+                    </a>
+                    </div>
+                </div>
             </div>
         );
     };

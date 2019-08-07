@@ -138,24 +138,30 @@ class HomeView extends Component {
         const subjectTitle = (
             this.state.htmlSubject ? "HTML" : 
             this.state.cssSubject ? "CSS" : 
-            this.state.jsSubject ? "JS" : "No se detectó ninguna elección.");
+            this.state.jsSubject ? "Javascript" : "No se detectó ninguna elección.");
 
         return(
-            <div>
-                <h1>
-                    Home View.
-                </h1>
-                <p>
-                    Acabas de completar el proceso de registro, Felicidades.
-                </p>
-                <h2>Nombre de usuario: {this.state.userName}</h2>
-                <img src= {this.state.userAvatar.src} alt= "User avatar." />
-                <h3>Elegiste como materia: {subjectTitle}</h3>
-                <div>
+            <div className= "app-home">
+                <div style={{borderBottom: "1px solid white", textAlign: "center"}}>
+                    <img src= {this.state.userAvatar.src} alt= "User avatar." style= {{width: "100px"}} />
+                    <h1 style={{textAlign: "center"}}>
+                        {this.state.userName}
+                    </h1>
+                </div>
+                <div style={{textAlign: "center"}}>
+                    <p>
+                        Actualmente estás estudiando:
+                    </p>
+                    <h2>{subjectTitle}</h2>
+                </div>
+                
+                
+                <div style={{textAlign: "center"}}>
+                    <p>Ir hacia:</p>
                     <Router>
-                        <Link to= "/configuration" onClick= {this.reloadRender}>Editar Nombre de Usuario</Link>
+                        <Link className= "app-steps" style= {{margin: "15px"}} to= "/article" onClick= {this.reloadRender}>Leer artículo</Link>
                         <br/>
-                        <Link to= "/article" onClick= {this.reloadRender}>Leer artículo</Link>
+                        <Link className= "app-steps" style= {{margin: "15px"}} to= "/configuration" onClick= {this.reloadRender}>Configuración</Link>
                     </Router>
                 </div>
             </div>

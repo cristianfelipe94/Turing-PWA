@@ -48,7 +48,7 @@ class ArticleView extends Component {
             this.setState({subjectToRead: userToReadStored});
             this.setState({dataLibraryToRender: userStoredData}); 
         }, 10);
-    }
+    };
 
     // Class method, will Reload window for Rendering new component.
     reloadRender () {
@@ -93,8 +93,8 @@ class ArticleView extends Component {
             return (currentArticleLinks.map((ref) => {
                 return (
                     <div key= {articlekeytitle}>
-                        <li>
-                            <a href= {ref} target= "_bank">{ref}</a>
+                        <li style= {{listStyle: "none", margin: "10px 0px"}}>
+                            <a style= {{textDecoration: "underline", color: "white"}} href= {ref} target= "_bank">{ref}</a>
                         </li>
                     </div>
                 );
@@ -102,19 +102,32 @@ class ArticleView extends Component {
         };
 
         return(
-            <div>
-                <h1 onClick= {this.renderLibrary}>Article Title</h1>
-                <p>This is an article please read this instructions and read the article, at the buttom you will see a bottom to save it as important or to close article.</p>
+            <div className= "app-article">
                 <div>
-                    <h2>{currentArticleSubject}</h2>
-                    <h2>{currentArticleTitle}</h2>
+                    <p>Actualmente leyendo de: <span style={{fontWeight: "bold"}}>{currentArticleSubject}</span></p>
+                    <h2 style= {{textTransform: "uppercase"}}>{currentArticleTitle}</h2>
                     <p>{currentArticleContent}</p>
-                    
-                    <ul>{currentArticleLinks}</ul>
+                    <ul style={{margin: "30px 0px", padding: "0"}}><span style={{fontWeight: "bold"}}>Referencias y qué más leer:</span>{currentArticleLinks}</ul>
                 </div>
-                <Router>
-                    <Link to= "/home" onClick= {this.reloadRender}>Terminar de leer el artículo.</Link>
-                </Router>
+                <div>
+                    <Router>
+                        <Link className="app-action" to= "/home" onClick= {this.reloadRender}>Cerrar artículo.</Link>
+                    </Router>
+                </div>
+                <div className= "app-developers">
+                    <p>
+                    Desarrollado por:
+                    </p>
+                    <div className= "app-developers-links">
+                        <a className="app-link" href="https://github.com/YethPenado" target="_blank" rel="noopener noreferrer">
+                        Yeth Penado
+                        </a>
+                        <p style= {{display: "inline-block"}}>|</p>
+                        <a className="app-link" href="https://github.com/cristianfelipe94" target="_blank" rel="noopener noreferrer">
+                        Cristian Calderón
+                        </a>
+                    </div>
+                </div>
             </div>
         );
     };

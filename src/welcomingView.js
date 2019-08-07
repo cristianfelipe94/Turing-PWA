@@ -48,10 +48,10 @@ class WelcomingView extends Component {
       <div className="app">
 
         <div className="app-header">
-          <p onClick={this.welcomeDecide}>
+          <p className="app-subtitle" onClick={this.welcomeDecide}>
             Bienvenido a
           </p>
-          <h1>Turing</h1>
+          <h1 className="app-title">Turing</h1>
         </div>
 
         <div className= "app-content">
@@ -72,17 +72,18 @@ class WelcomingView extends Component {
 
           <div className= "app-developers">
             <p>
-              Desarrollado por:
+            Desarrollado por:
             </p>
             <div className= "app-developers-links">
-              <a className="app-link" href="https://github.com/YethPenado" target="_blank" rel="noopener noreferrer">
-              Yeth Penado.
-              </a>
-              <a className="app-link" style={{marginLeft: '20px'}} href="https://github.com/cristianfelipe94" target="_blank" rel="noopener noreferrer">
-              Cristian Calderón.
-              </a>
-            </div>
+            <a className="app-link" href="https://github.com/YethPenado" target="_blank" rel="noopener noreferrer">
+            Yeth Penado
+            </a>
+            <p style= {{display: "inline-block"}}>|</p>
+            <a className="app-link" href="https://github.com/cristianfelipe94" target="_blank" rel="noopener noreferrer">
+            Cristian Calderón
+            </a>
           </div>
+        </div>
       </div>
     );
   };
