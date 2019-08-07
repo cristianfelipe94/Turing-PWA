@@ -86,15 +86,23 @@ class ArticleView extends Component {
         const currentArticleSubject = this.state.dataLibraryToRender.length !== 0 ? this.state.dataLibraryToRender[this.state.currentArticle].subject : "" ;
         const currentArticleTitle = this.state.dataLibraryToRender.length !== 0 ? this.state.dataLibraryToRender[this.state.currentArticle].title : "" ;
         
-        const currentArticleContent = this.state.dataLibraryToRender.length !== 0 ? this.state.dataLibraryToRender[this.state.currentArticle].content : "" ;
+        const currentArticleContent = this.state.dataLibraryToRender.length !== 0 ? contenidos(this.state.dataLibraryToRender[this.state.currentArticle].content, currentArticleTitle) : "" ;
         const currentArticleLinks = this.state.dataLibraryToRender.length !== 0 ? referenciales (this.state.dataLibraryToRender[this.state.currentArticle].referencias, currentArticleTitle) : "" ;
+        
+        function contenidos (currentContent, articlekeytitle) {
+            return (currentContent.map((content) => {
+                return (
+                    <p key= {articlekeytitle+content}>{content}</p>
+                );
+            }));
+        };
 
-       function referenciales (currentArticleLinks, articlekeytitle) {
-            return (currentArticleLinks.map((ref) => {
+       function referenciales (currentLinks, articlekeytitle) {
+            return (currentLinks.map((ref) => {
                 return (
                     <div key= {articlekeytitle}>
                         <li style= {{listStyle: "none", margin: "10px 0px"}}>
-                            <a style= {{textDecoration: "underline", color: "white"}} href= {ref} target= "_bank">{ref}</a>
+                            <a style= {{textDecoration: "underline", color: "#9efda2"}} href= {ref} target= "_bank">{ref}</a>
                         </li>
                     </div>
                 );
@@ -104,7 +112,7 @@ class ArticleView extends Component {
         return(
             <div className= "app-article">
                 <div>
-                    <p>Actualmente leyendo de: <span style={{fontWeight: "bold"}}>{currentArticleSubject}</span></p>
+                    <p style= {{backgroundColor: "#4dd7a3", display: "inline-block", padding: "12px", color: "black"}}>Actualmente leyendo de: <span style={{fontWeight: "bold"}}>{currentArticleSubject}</span></p>
                     <h2 style= {{textTransform: "uppercase"}}>{currentArticleTitle}</h2>
                     <p>{currentArticleContent}</p>
                     <ul style={{margin: "30px 0px", padding: "0"}}><span style={{fontWeight: "bold"}}>Referencias y qué más leer:</span>{currentArticleLinks}</ul>

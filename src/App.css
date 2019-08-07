@@ -10,7 +10,7 @@ body {
   font-weight: 300;
   background-image: linear-gradient(120deg, rgba(58,109,163,1) 0%, rgb(33, 61, 90));
   height: 100vh;
-  overflow: hidden;
+  overflow: auto;
   color: white;
 }
 
