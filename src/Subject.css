@@ -24,17 +24,3 @@
 .avatarUnselected {
     background-color: white;
 }
-
-.openedModal {
-    opacity: 1;
-    display: block;
-    height: 200px;
-    width: 200px;
-}
-
-.closedModal {
-    opacity: 0;
-    display: block;
-    height: 0px;
-    width: 0px;
-}

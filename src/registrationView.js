@@ -65,30 +65,43 @@ class RegistrationView extends Component {
         const avatarSelectedId = this.state.userAvatar.id;
         const gallery = this.state.avatarImages.map(({id, src, description}) => {
             return (
-                <button key={"button"+id} onClick= {this.pickAvatar} className = {avatarSelectedId !== id? "avatarUnselected" : "avatarSelected"}>
+                <button key={"button"+id} onClick= {this.pickAvatar} className = {avatarSelectedId !== id? "avatarUnselected, avatar-btn" : "avatarSelected,  avatar-btn"}>
                     <img key={id} src={src} alt={description} id={id}/>
                 </button>
             );
         });
 
         return (
-            <div className= "App">
-                <header className= "App-header">
-                    <div>
-                        <h1>Registration</h1>
+            <div className= "app-registration">
+                <div>
+                    <h1>Elige un avatar</h1>
+                    <div className= "app-avatar-content">
                         {gallery}
-                        <form>
-                            <label htmlFor= "username">Nombre de usuario:</label>
-                            <input type= "input" id= "username" onChange={this.usernameKeylog}></input>
-                            <button onClick= {this.submitUsername}>Ingresar datos</button>
-                        </form>
-                        <div className = {`${this.state.completedUserSet? "openedModal" : "closedModal"}`}>
-                            <Router>
-                                <Link to= "/subject" onClick= {this.reloadRender}>Terminar proceso de Registro</Link>
-                            </Router>
+                    </div>
+                    <form style= {{padding: "20px"}}>
+                        <label htmlFor= "username" style= {{display: "block", padding: "10px"}}>Elige un nombre de usuario:</label>
+                        <input type= "input" id= "username" onChange={this.usernameKeylog} placeholder= "Escribe tu nombre de usuario aquí" className= "username-input"></input>
+                        <button className="app-action" style= {{border: "none", textTransform: "unset", margin: "15px 0"}}onClick= {this.submitUsername}>Registrarme</button>
+                    </form>
+                    <div className = {`${this.state.completedUserSet? "openedModal" : "closedModal"}`}>
+                        <Router>
+                            <Link to= "/subject" onClick= {this.reloadRender}>Terminar proceso de Registro</Link>
+                        </Router>
+                    </div>
+                    <div className= "app-developers">
+                        <p>
+                        Desarrollado por:
+                        </p>
+                        <div className= "app-developers-links">
+                        <a className="app-link" href="https://github.com/YethPenado" target="_blank" rel="noopener noreferrer">
+                        Yeth Penado.
+                        </a>
+                        <a className="app-link" style={{marginLeft: '20px'}} href="https://github.com/cristianfelipe94" target="_blank" rel="noopener noreferrer">
+                        Cristian Calderón.
+                        </a>
                         </div>
                     </div>
-                </header>
+                </div>
             </div>
         );
     };

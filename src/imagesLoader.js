@@ -2,10 +2,12 @@ import React from "react";
 
 // Assets like images are relative to the HTML file.
 const AvataresImages = [
-    {id: 1, src: "./assets/avatares/imgicon1.jpg", description: "Avatar icon 1."},
-    {id: 2, src: "./assets/avatares/imgicon2.jpg", description: "Avatar icon 2."},
-    {id: 3, src: "./assets/avatares/imgicon3.jpg", description: "Avatar icon 3."},
-    {id: 4, src: "./assets/avatares/imgicon4.jpg", description: "Avatar icon 4."}
+    {id: 1, src: "./assets/avatares/avatar1.png", description: "Avatar icon girl."},
+    {id: 2, src: "./assets/avatares/avatar2.png", description: "Avatar icon guy."},
+    {id: 3, src: "./assets/avatares/avatar3.png", description: "Avatar icon girl."},
+    {id: 4, src: "./assets/avatares/avatar4.png", description: "Avatar icon guy."},
+    {id: 5, src: "./assets/avatares/avatar5.png", description: "Avatar icon girl."},
+    {id: 6, src: "./assets/avatares/avatar6.png", description: "Avatar icon guy."},
 ];
 
 function loadImages () {

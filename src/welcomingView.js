@@ -37,8 +37,6 @@ class WelcomingView extends Component {
   }
 
   welcomeDecide () {
-    // console.log(localStorage);
-    // console.log(this.state.userSigned);
     localStorage.clear();
     console.log("Clear storage");
     console.log("access localStorage: ", localStorage);
@@ -47,32 +45,44 @@ class WelcomingView extends Component {
   render() {
     
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={gearDark} style= {{height: "30vmin"}} className="App-logo" alt="logo" />
-          <img src={gearLight} className="App-logo" alt="logo"/>
+      <div className="app">
 
-          <p>
-            Hola, <span style={{color: "#61dafb"}} onClick={this.welcomeDecide}>Turing</span> te da bienvenida.
+        <div className="app-header">
+          <p onClick={this.welcomeDecide}>
+            Bienvenido a
           </p>
+          <h1>Turing</h1>
+        </div>
+
+        <div className= "app-content">
+          <h2>
+            Aprende a tu ritmo
+          </h2>
+          <p>
+            <span style= {{textTransform: "uppercase"}}>Turing</span> es una biblioteca dedicada a la enseñanza del Diseño y Desarrollo Web.
+          </p>
+          <p>
+            Elige las materias de tu interés y nosotros nos encargamos de brindarte los mejores recursos para tu aprendizaje.
+          </p>
+        </div>
 
           <Router>
-            <Link to= {`${this.state.userSigned? "/home" : "/registration"}`} onClick= {this.reloadRender}>Ir al proceso de Registro.</Link>
+            <Link className="app-action" to= {`${this.state.userSigned? "/home" : "/registration"}`} onClick= {this.reloadRender}>Iniciar</Link>
           </Router>
 
-          <div>
+          <div className= "app-developers">
             <p>
-              Desarrolladores:
+              Desarrollado por:
             </p>
-            <a className="App-link" href="https://github.com/YethPenado" target="_blank" rel="noopener noreferrer">
-            Yeth Penado.
-            </a>
-            <a className="App-link" style={{marginLeft: '20px'}} href="https://github.com/cristianfelipe94" target="_blank" rel="noopener noreferrer">
-            Cristian Calderón.
-            </a>
+            <div className= "app-developers-links">
+              <a className="app-link" href="https://github.com/YethPenado" target="_blank" rel="noopener noreferrer">
+              Yeth Penado.
+              </a>
+              <a className="app-link" style={{marginLeft: '20px'}} href="https://github.com/cristianfelipe94" target="_blank" rel="noopener noreferrer">
+              Cristian Calderón.
+              </a>
+            </div>
           </div>
-
-        </header>
       </div>
     );
   };
