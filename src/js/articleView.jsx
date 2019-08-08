@@ -84,6 +84,10 @@ class ArticleView extends Component {
     };
 
     render() {
+
+        const bodyDom = document.querySelector('body');
+        bodyDom.setAttribute('class', 'bodyConfig');
+        
         const desconstructedState = this.state;
         function contenidos(currentContent, articlekeytitle) {
             return (currentContent.map(content => <p key={articlekeytitle + content}> {content}</p>));

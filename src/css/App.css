@@ -1,3 +1,5 @@
+/*#EF4A4A*/
+
 @font-face {
   font-family: achifont;
   src: url(../achifont/achiregular.ttf);
@@ -99,10 +101,10 @@ html {
 
 .app-action {
   text-decoration: none;
-  color: white;
+  color: #3a3535;
   font-weight: bold;
   text-transform: uppercase;
-  background-color: #EF4A4A;
+  background-color: #efb13d;
   padding: 10px 34px;
   box-shadow: 1px 2px 4px #0000006e;
   margin: 25px 0;
@@ -116,8 +118,8 @@ html {
   font-family: 'Lato', sans-serif;
   padding: 10px 25px;
   font-size: 15px;
-  background-color: #EF4A4A;
-  color: white;
+  background-color: #efb13d;
+  color: #3a3535;
   box-shadow: 1px 2px 4px #0000006e;
   margin: 40px 0 15px;
   display: inline-block;
