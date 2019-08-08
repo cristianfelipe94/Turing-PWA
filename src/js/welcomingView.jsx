@@ -1,5 +1,6 @@
+/* eslint-disable */
 // React Component, for building Class Component.
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 // Router, Routes, Switches and Links.
 import {
@@ -8,42 +9,39 @@ import {
 } from 'react-router-dom';
 
 // Classes from a CSS file.
-import "./App.css";
-
-// Images and Assets.
-import gearLight from "./gearIcon.png";
-import gearDark from "./gearIcon2.png";
+import '../css/App.css';
 
 class WelcomingView extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      userSigned: false
-    }
+      userSigned: false,
+    };
     this.welcomeDecide = this.welcomeDecide.bind(this);
   }
 
-  // Class method, will Reload window for Rendering new component.
-  reloadRender () {
-    setTimeout(() => {window.location.reload()}, 100);
-  };
-
   componentDidMount() {
-    if(!localStorage.length) {
-      this.setState({userSigned: false})
+    if (!localStorage.length) {
+      this.setState({ userSigned: false });
     } else if (localStorage.length > 0) {
-      this.setState({userSigned: true})
-    };
+      this.setState({ userSigned: true });
+    }
   }
 
-  welcomeDecide () {
+  welcomeDecide() {
     localStorage.clear();
-    console.log("Clear storage");
-    console.log("access localStorage: ", localStorage);
-  };
+    console.log('Clear storage');
+    console.log('access localStorage: ', localStorage);
+  }
+  
+  // Class method, will Reload window for Rendering new component.
+  reloadRender(e) {
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
+  }
 
   render() {
-    
     return (
       <div className="app">
 
@@ -54,31 +52,32 @@ class WelcomingView extends Component {
           <h1 className="app-title">Turing</h1>
         </div>
 
-        <div className= "app-content">
+        <div className="app-content">
           <h2>
             Aprende a tu ritmo
           </h2>
           <p>
-            <span style= {{textTransform: "uppercase"}}>Turing</span> es una biblioteca dedicada a la enseñanza del Diseño y Desarrollo Web.
+            <span style={{ textTransform: 'uppercase' }}>Turing</span>
+              es una biblioteca dedicada a la enseñanza del Diseño y Desarrollo Web.
           </p>
           <p>
             Elige las materias de tu interés y nosotros nos encargamos de brindarte los mejores recursos para tu aprendizaje.
           </p>
         </div>
 
-          <Router>
-            <Link className="app-action" to= {`${this.state.userSigned? "/home" : "/registration"}`} onClick= {this.reloadRender}>Iniciar</Link>
-          </Router>
+        <Router>
+          <Link className="app-action" to={`${this.state.userSigned ? '/#/home' : '/#/registration'}`} onClick={this.reloadRender}>Iniciar</Link>
+        </Router>
 
-          <div className= "app-developers">
-            <p>
+        <div className="app-developers">
+          <p>
             Desarrollado por:
-            </p>
-            <div className= "app-developers-links">
+          </p>
+          <div className="app-developers-links">
             <a className="app-link" href="https://github.com/YethPenado" target="_blank" rel="noopener noreferrer">
             Yeth Penado
             </a>
-            <p style= {{display: "inline-block"}}>|</p>
+            <p style={{ display: 'inline-block' }}>|</p>
             <a className="app-link" href="https://github.com/cristianfelipe94" target="_blank" rel="noopener noreferrer">
             Cristian Calderón
             </a>
@@ -86,8 +85,8 @@ class WelcomingView extends Component {
         </div>
       </div>
     );
-  };
-};
+  }
+}
 
 
 export default WelcomingView;

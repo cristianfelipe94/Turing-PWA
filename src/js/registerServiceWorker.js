@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Only register service worker in production version.
 if (process.env.NODE_ENV === 'production') {
   // Check that service workers are supported.
