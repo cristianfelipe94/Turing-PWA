@@ -57,7 +57,7 @@ class WelcomingView extends Component {
             Aprende a tu ritmo
           </h2>
           <p>
-            <span style={{ textTransform: 'uppercase' }}>Turing</span>
+            <span style={{ textTransform: 'uppercase' }}>Turing </span>
               es una biblioteca dedicada a la enseñanza del Diseño y Desarrollo Web.
           </p>
           <p>
