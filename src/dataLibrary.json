@@ -9,7 +9,7 @@
 
                 "No se limita solo a crear nuevas etiquetas o atributos, sino que incorpora muchas características nuevas y proporciona una plataforma de desarrollo de complejas aplicaciones web (mediante los APIs).",
 
-                "Algunas de las nuevas características de HTML5 serían:",
+                "Algunas de las nuevas características de HTML5 son:",
 
                 "Nuevas etiquetas semánticas para estructurar los documentos HTML, destinadas a remplazar la necesidad de tener una etiqueta <div> que identifique cada bloque de la página.",
 
@@ -383,14 +383,104 @@
         },
         {
             "subject": "javascript",
-            "title": "Aún no hay titulo",
+            "title": "Breve historia de JS",
             "content": [
 
-                "Aún no hay contenido."
+                "Con unas aplicaciones web cada vez más complejas y una velocidad de navegación tan lenta, surgió la necesidad de un lenguaje de programación que se ejecutará en el navegador del usuario.",
+
+                "Brendan Eich, un programador que trabajaba en Netscape, pensó que podría solucionar este problema adaptando otras tecnologías existentes (como ScriptEase) al navegador Netscape Navigator 2.0, que iba a lanzarse en 1995. Inicialmente, Eich denominó a su lenguaje LiveScript.",
+                
+                "Posteriormente, Netscape firmó una alianza con Sun Microsystems para el desarrollo del nuevo lenguaje de programación. Además, justo antes del lanzamiento Netscape decidió cambiar el nombre por el de JavaScript.",
+
+                "La razón del cambio de nombre fue exclusivamente por marketing, ya que Java era la palabra de moda en el mundo informático y de Internet de la época.",
+
+                "La primera versión de JavaScript fue un completo éxito y Netscape Navigator 3.0 ya incorporaba la siguiente versión del lenguaje, la versión 1.1. Al mismo tiempo, Microsoft lanzó JScript con su navegador Internet Explorer 3. JScript era una copia de JavaScript al que le cambiaron el nombre para evitar problemas legales.",
+
+                "Para evitar una guerra de tecnologías, Netscape decidió que lo mejor sería estandarizar el lenguaje JavaScript. De esta forma, en 1997 se envió la especificación JavaScript 1.1 al organismo ECMA European Computer Manufacturers Association).",
+
+                "ECMA creó el comité TC39 con el objetivo de 'estandarizar de un lenguaje de script multiplataforma e independiente de cualquier empresa'. El primer estándar que creó el comité TC39 se denominó ECMA-262, en el que se definió por primera vez el lenguaje ECMAScript.",
+
+                "Por este motivo, algunos programadores prefieren la denominación ECMAScript para referirse al lenguaje JavaScript. De hecho, JavaScript no es más que la implementación que realizó la empresa Netscape del estándar ECMAScript."
 
             ],
             "referencias": [
-                ""
+                "https://uniwebsidad.com/libros/javascript/capitulo-1/breve-historia"
+            ]
+        },
+        {
+            "subject": "javascript",
+            "title": "Introducción",
+            "content": [
+
+                "JavaScript es el lenguaje de script de más amplio uso en la web y con las últimas tendencias de aplicaciones cliente se está convirtiendo en el lenguaje de programación más importante para el entorno web.",
+
+                "En los últimos años han salido librerías como jQuery y frameworks como AngularJS o Node.js con lo que está adquiriendo un gran potencial.",
+                
+                "Aunque su nombre lo sugiere, nada tiene que ver con Java. Su nombre es una táctica comercial de Netscape cuando allá por el año 1995 lo introdujo en su navegador. Por lo que ni es una versión reducida de Java ni es un lenguaje simple.",
+
+                "JavaScript es un lenguaje orientado a objetos, aunque con distinta filosofía que C++ y Java, no existen las clases y los objetos son colecciones de métodos y propiedades ( más adelante veremos lo que es un objeto de este lenguaje ).",
+
+                "Su sintaxis es similar a C++ o Java, aunque es menos restrictiva. JavaScript es un lenguaje no tipado, es decir, si declaramos una variable esta puede almacenar tanto números como caracteres. Una gran diferencia con otros lenguajes de programación.",
+
+                "Los tipos de datos en JavaScript pueden ser numéricos, booleanos, cadenas y objetos (función, array, fecha, expresión regular). Los operadores y sentencias son iguales que en C++ y Java.",
+
+                "Y para finalizar,  recordar que existen librerías como jQuery que nos hacen más fácil el acceso y la manipulación a los elementos de nuestra página web y frameworks como AngularJS que facilitan un patrón de diseño MVC en la parte del cliente.",
+
+                "Nuestra recomendación es que primero conozcas y practiques con JavaScript puro y duro y luego pases a una librería más avanzada."
+                
+            ],
+            "referencias": [
+                "https://programarfacil.com/blog/programacion/introduccion-al-javascript/"
+            ]
+        },
+        {
+            "subject": "javascript",
+            "title": "Introducción",
+            "content": [
+
+                "Espacios en blanco — Identación: Normalmente se puede trabajar con identación y espacios en blanco en el código y no es importante para el intérprete puesto que no los toma en cuenta, pero para el programador, esto provee una mejor legibilidad del código.",
+
+                "Longitud de una lí­nea: El lí­mite de las lí­neas de código deberán ser de 80 caracteres, esto ayudará a una mejor lectura del código. Es seguro que tu editor de texto o IDE soporta esta caracterí­stica.",
+                
+                "Comillas: Hay algunas recomendaciones acerca de esta notación. Aunque Javascript permite usar comillas simples o comillas dobles indistintamente, generalmente es recomendable, en ciertos casos, escribir con comillas simples y en otros con comillas dobles. Solo si estás escribiendo JSON, utiliza comillas dobles, en los demás casos usa comillas simples.",
+
+                "¿Dónde está permitido colocar punto y coma en las instrucciones?: Cuando se trata de algunos flujos de control, cuando se trata de expresiones de funciones o arrow functions, luego de notación de objetos, luego de un array y cuando retornas una expresión o resultado.",
+
+                "Ámbito de las variables (Scope): Cuando se habla del ámbito de las variables (scope), hay que tener en cuenta si es un ámbito global o local. Normalmente hablamos de un ámbito local cuando dichas variables están contenidas dentro de una función.",
+
+                "Entonces dicha función serí­a el contenedor de la variable, siendo este su scope. Esta variable no tiene ningún valor fuera de su contenedor.",
+
+                "Hay muchas convenciones más, te recomendamos leer los enlaces que se encuentran justo debajo, para más información."
+
+            ],
+            "referencias": [
+                "https://medium.com/@davidenq/gu%C3%ADa-de-estilo-convenciones-y-buenas-pr%C3%A1cticas-de-desarrollo-con-javascript-d2e9ef80d63b"
+            ]
+        },
+        {
+            "subject": "javascript",
+            "title": "Importancia de Javascript",
+            "content": [
+
+                "En algún momento, JAVA fue la mejor solución para muchos procedimientos relacionados al mundo de la informática. Pero como todo en el mundo, y por sobre todo en la tecnología, los avances son cada vez más y más rápidos.",
+
+                "Entonces ya no bastaba con ser un programador JAVA para ser un multi-plataforma, las tecnologías fueron avanzando como así la WEB y teníamos 2 posibilidades, FLASH o JAVASCRIPT, de esta forma se hacían conexiones en la web y éramos interactivos, más allá que con JSP (javaserver page) o PHP, podríamos interactuar con el cliente, las páginas en su contenido eran estáticas.",
+                
+                "Con la aparición de Flash y Javascript se empezó a interactuar con las páginas y como así también se empezó a poner movimientos y conexiones con el backend de mejor forma. No es un secreto de estado que Javascript ganó ampliamente esta pelea por ser el movimiento del frontend ya que con la salida del IPad murió flash poco a poco.",
+
+                "Entonces, de ser un simple conector entre backend y frontend, poco a poco fue ganando funciones y seguidores en la web, los menús y movimientos se dejaron de hacer sobre flash y se empezaron a hacer sobre javascript.",
+
+                "Pero el gran fanatismo por este lenguaje no se quedó ahí, sino que aparecieron intento de tener ese mismo lenguaje en el backend, la gente no quería hacer php/python/java/ u otro lenguaje en el backend para tener que trabajar con javascript en el frontend.",
+
+                "Y aparece uno de las mejores soluciones que tuvo javascript luego de jquery, apareció NODEJS un gran avance de javascript en la pelea de ser el lenguaje dueño del mercado.",
+
+                "NodeJS es un servidor de javascript, si exactamente, un servidor de javascript entonces ya no necesitábamos cambiar de lenguajes para poder desarrollar una solución web, o una solución en sí.",
+                
+                "Hubo otros intentos pero 100% javascript hoy en día esta NodeJS marcando el mercado de desarrollo en javascript, y con grandes frameworks como SailsJS Express Meteor y LoopBack (entre otros) empezamos a utilizar este server javascript para una API Rest , un servidor de files y un servidor web."
+
+            ],
+            "referencias": [
+                "https://medium.com/@jorgeucano/la-importancia-de-javascript-914f5cf8dc68"
             ]
         }
     ]
