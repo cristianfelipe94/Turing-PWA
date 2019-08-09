@@ -4,6 +4,7 @@
             "subject": "html",
             "title": "¿Qué es HTML5?",
             "content": [
+
                 "HTML5 (HyperText Markup Language, versión 5) es la quinta revisión del lenguaje HTML. Esta nueva versión (aún en desarrollo), y en conjunto con CSS3, define los nuevos estándares de desarrollo web, rediseñando el código para resolver problemas y actualizándolo así a nuevas necesidades.",
 
                 "No se limita solo a crear nuevas etiquetas o atributos, sino que incorpora muchas características nuevas y proporciona una plataforma de desarrollo de complejas aplicaciones web (mediante los APIs).",
@@ -21,9 +22,375 @@
                 "MathML para fórmulas matemáticas.",
 
                 "Almacenamiento local en el lado del cliente."
+
             ],
             "referencias": [
-                "https://developer.mozilla.org/es/docs/HTML/HTML5/HTML5_lista_elementos","https://lenguajehtml.com/p/html/semantica/etiquetas-html-de-texto"
+                "https://developer.mozilla.org/es/docs/HTML/HTML5/HTML5_lista_elementos","https://lenguajehtml.com/p/html/semantica/etiquetas-html-de-texto",
+                "https://www.arkaitzgarro.com/html5/capitulo-1.html"
+            ]
+        },
+        {
+            "subject": "html",
+            "title": "Historia de HTML5",
+            "content": [
+
+                "El origen de HTML se remonta a 1980, cuando el físico Tim Berners-Lee, trabajador del CERN (Organización Europea para la Investigación Nuclear) propuso un nuevo sistema de hipertexto para compartir documentos.",
+
+                "Los sistemas de hipertexto habían sido desarrollados años antes.",
+
+                "En el ámbito de la informática, el hipertexto permitía que los usuarios accedieran a la información relacionada con los documentos electrónicos que estaban visualizando. De cierta manera, los primitivos sistemas de hipertexto podrían asimilarse a los enlaces de las páginas web actuales.",
+
+                "Tras finalizar el desarrollo de su sistema de hipertexto, Tim Berners-Lee lo presentó a una convocatoria organizada para desarrollar un sistema de hipertexto para Internet. Después de unir sus fuerzas con el ingeniero de sistemas Robert Cailliau, presentaron la propuesta ganadora llamada WorldWideWeb (W3).",
+
+                "El primer documento formal con la descripción de HTML se publicó en 1991 bajo el nombre HTML Tags (Etiquetas HTML) y todavía hoy puede ser consultado online a modo de reliquia informática."
+
+            ],
+            "referencias": [
+                "https://uniwebsidad.com/libros/xhtml/capitulo-1/breve-historia-de-html"
+            ]
+        },
+        {
+            "subject": "html",
+            "title": "Estructura básica de una página web",
+            "content": [
+
+                "Las páginas web mantienen una estructura muy sencilla que debemos respetar para que los navegadores sean capaces de presentarla.",
+
+                "No podemos comenzar nuestra página con una etiqueta de párrafo, por ejemplo. Primero debemos indicar qué tipo de página estamos generando, qué información adicional llevará y dónde comienza el contenido que debe ser mostrado.",
+
+                "Para crear un verdadero documento HTML, se debe empezar con tres elementos contenedores:",
+
+                "<html>: Este elemento envuelve todo el contenido de la página (excepto el Doctype).",
+
+                "<head>: Este elemento designa la parte de encabezado del documento. Puede incluir información opcional sobre la página Web, como puede ser el título (el navegador lo muestra en la barra de título), palabras clave de búsqueda opcionales y una hoja de estilo opcional.",
+
+                "<body>: Este elemento alberga el contenido de su página Web, es decir, aquello que queremos que aparezca en el área de navegación del navegador. Aquí va propiamente el contenido de la página: fotos, párrafos, formularios, etc."
+
+            ],
+            "referencias": [
+                "https://disenowebakus.net/domine-html-y-dhtml-primeros-pasos.php"
+            ]
+        },
+        {
+            "subject": "html",
+            "title": "Metadatos o meta tags",
+            "content": [
+
+                "Los meta tags se insertan en la cabecera de la página, entre las etiquetas <head></head>.",
+
+                "La función de estos tags varía. Pueden ser informativos, para los buscadores y usuarios, indicándoles el tipo de contenido de la web, sus palabras claves, etc. o pueden predefinir una actuación a la página.",
+
+                "Los meta tags no se pueden ver a no ser que sea a través del código fuente. Es decir, un meta tag no hace variar la apariencia de una página web, pero son imprescindibles e importantísimos para los buscadores webs.",
+
+                "Estas etiquetas juegan un papel importante en el posicionamiento web, especialmente la etiqueta meta description. Si te interesa el posicionamiento SEO, puedes ampliar la información en este curso gratuito de SEO.",
+
+                "El esquema de un meta tag es el siguiente: <meta name=” ” content=” “/>. El “name” muestra el nombre de la etiqueta y el “content” el contenido de esa etiqueta."
+
+            ],
+            "referencias": [
+                "https://www.hazunaweb.com/curso-de-html/meta-tags-basicos/"
+            ]
+        },
+        {
+            "subject": "html",
+            "title": "Elementos en HTML",
+            "content": [
+
+                "Etiquetas: Un elemento HTML generalmente está compuesto por dos etiquetas: la etiqueta de apertura y la etiqueta de cierre.",
+
+                "Una etiqueta de apertura consiste en el nombre del elemento encerrado por los signos menor que ( < ) y mayor que ( > ).",
+
+                "La etiqueta de cierre se construye como la etiqueta de apertura pero, en este caso, el nombre del elemento está precedido por una barra diagonal ( / ).",
+
+                "<b>Important text</b>",
+
+                "Contenido: El contenido de un elemento es, en general, lo que se encuentre entre sus etiquetas de apertura y cierre.",
+
+                "Dependiendo del elemento, esto puede pasar de absolutamente nada a una pieza de documento HTML.",
+
+                "Este contenido es lo que se verá afectado por la funcionalidad o el significado del elemento. Por ejemplo, el elemento ( <em> </em> ) otorga énfasis al contenido, y los navegadores generalmente muestran su texto con un estilo de fuente particular para que se destaque del texto normal.",
+                
+                "Atributos: son la forma en que los autores deben definir las propiedades de un elemento.",
+
+                "Estas propiedades generalmente cambian la forma en que un navegador interpreta el elemento, al cambiar su significado o presentación."
+
+            ],
+            "referencias": [
+                "https://uniwebsidad.com/libros/xhtml/capitulo-2/elementos-html"
+            ]
+        },
+        {
+            "subject": "html",
+            "title": "Buenas prácticas en HTML",
+            "content": [
+
+                "Seguir una serie de buenas prácticas de HTML para escribir código limpio y mantenible hace que, además de reducir el tiempo de desarrollo y mantenimiento de nuestros sitios web, mejore su velocidad de carga y posicionamiento.",
+
+                "Este artículo va dirigido tanto a personas con pocos conocimientos de HTML, como para aquellas que ya cuentan con cierta experiencia en este lenguaje.",
+
+                "Declara el DOCTYPE: A través de la declaración del tipo de documento, o DOCTYPE, indicamos el estándar usado al construir un documento HTML.",
+
+                "De esta forma, los navegadores que lean esta declaración interpretarán el documento con el lenguaje y versión definidos. Cabe destacar que, estando en 2017, no debemos usar un DOCTYPE obsoleto, y utilizar siempre la versión recomendada de HTML, que a día de hoy es HTML5.",
+
+                "Cierra las etiquetas: Una de las primeras cosas que se estudian cuando se está aprendiendo HTML es que las etiquetas deben cerrarse, y en el mismo orden en el que se abrieron.",
+
+                "Usa minúsculas en los nombres de etiquetas, atributos y valores: A pesar de no afectar al funcionamiento de la página, es una recomendación escribir siempre las etiquetas, atributos y valores en minúsculas, ya que mejora la legibilidad del código.",
+
+                "Usa el atributo ALT en imágenes: Las imágenes deben incluir siempre dicho atributo, que proporciona, como su nombre indica, un texto alternativo a la imagen.",
+                
+                "Su uso mejora la accesibilidad ya que, por ejemplo, los lectores de pantalla se basan en este atributo para proporcionar un contexto a las imágenes.",
+
+                "Usa una indentación consistente: Esto es aplicable a cualquier lenguaje: un código con mala indentación o sin ella carece en gran medida de legibilidad.",
+
+                "Indentar es utilizar espacios a la derecha de cada línea con el objetivo de mejorar la legibilidad del código, por lo que es un aspecto importante y que deberías tener siempre en cuenta al programar.",
+
+                "Usa etiquetas semánticas y evita la Divitis: Se podría definir Divitis como esa mala práctica de usar divs para organizar todo el contenido de la página.",
+
+                "Aunque funciona, empeora la legibilidad y sobrecarga el código.",
+
+                "Especifica la codificación de caracteres: También de las más conocidas, especificar correctamente la codificación de caracteres nos permitirá la correcta visualización del contenido de nuestra página, incluyendo tildes y caracteres especiales como ñ, indicando al navegador cómo debe interpretarlos.",
+
+                "Para especificarla, debemos añadir la siguiente línea al header de la página: <meta charset= ''UTF-8''/> .",
+
+                "Con todo lo anteriormente comentado, conseguiremos también mejorar el posicionamiento de nuestra página. Estas son nuestras buenas prácticas de HTML para escribir código limpio y mantenible.",
+
+                "De todas las que existen y podríamos comentar, hemos seleccionado estas por ser las que consideramos más importantes, aunque hay muchas más."
+
+            ],
+            "referencias": [
+                "https://webappdesign.es/buenas-practicas-html-escribir-codigo-limpio-mantenible/"
+            ]
+        },
+        {
+            "subject": "html",
+            "title": "Comentarios en HTML",
+            "content": [
+
+                "Al igual que la mayoría de lenguajes de marcado, HTML permite incluir comentarios dentro de su código para añadir información que no se debe mostrar por pantalla.",
+
+                "Aunque los comentarios no se muestran por pantalla y por tanto son invisibles para los usuarios, sí que se descargan con el código HTML de la página.",
+
+                "Por este motivo, nunca debe incluirse información sensible o confidencial en los comentarios.",
+
+                "La sintaxis de los comentarios es la siguiente:",
+
+                "Apertura del comentario: <!--",
+
+                "Contenido del comentario: (cualquier texto)",
+
+                "Cierre del comentario: -->",
+                
+                "Ejemplo: <!-- Este es un comentario en HTML -->"
+
+            ],
+            "referencias": [
+                "https://uniwebsidad.com/libros/xhtml/capitulo-11"
+            ]
+        },
+        {
+            "subject": "css",
+            "title": "Breve historia de CSS",
+            "content": [
+
+                "Las hojas de estilos aparecieron poco después que el lenguaje de etiquetas SGML, alrededor del año 1970.",
+
+                "Desde la creación de SGML, se observó la necesidad de definir un mecanismo que permitiera aplicar de forma consistente diferentes estilos a los documentos electrónicos.",
+
+                "El gran impulso de los lenguajes de hojas de estilos se produjo con el boom de Internet y el crecimiento exponencial del lenguaje HTML para la creación de documentos electrónicos.",
+
+                "La guerra de navegadores y la falta de un estándar para la definición de los estilos dificultaban la creación de documentos con la misma apariencia en diferentes navegadores.",
+
+                "El organismo W3C ( World Wide Web Consortium ), encargado de crear todos los estándares relacionados con la web, propuso la creación de un lenguaje de hojas de estilos específico para el lenguaje HTML y se presentaron nueve propuestas.",
+
+                "Las dos propuestas que se tuvieron en cuenta fueron la CHSS ( Cascading HTML Style Sheets ) y la SSP ( Stream-based Style Sheet Proposal ). La propuesta CHSS fue realizada por Håkon Wium Lie y SSP fue propuesto por Bert Bos.",
+
+                "Entre finales de 1994 y 1995 Lie y Bos se unieron para definir un nuevo lenguaje que tomaba lo mejor de cada propuesta y lo llamaron CSS ( Cascading Style Sheets )."
+                
+            ],
+            "referencias": [
+                "https://uniwebsidad.com/libros/css/capitulo-1/breve-historia-de-css"
+            ]
+        },
+        {
+            "subject": "css",
+            "title": "Hojas de CSS",
+            "content": [
+
+                "En las primeras versiones del HTML, el código fuente de una página web contenía tanto la información (el contenido) como la forma de representarse (el diseño o formato).",
+
+                "Actualmente, estos dos aspectos se pueden separar. La página web ( el documento html ) sólo debe contener información, mientras que el formato se debe definir en las llamadas hojas de estilo ( en inglés, CSS, Cascading Style Sheets, es decir, Hojas de Estilo en Cascada ).",
+
+                "Las ventajas de utilizar hojas de estilo son muchas, sobre todo permiten hacer un diseño consistente y fácil de modificar.",
+
+                "Si varias páginas web hacen referencia a la misma hoja de estilo, para cambiar la apariencia de todas las páginas es suficiente con hacer los cambios en un único lugar, que sería en la hoja de estilo."
+
+            ],
+            "referencias": [
+                "http://www.mclibre.org/consultar/htmlcss/css/css-que-es.html"
+            ]
+        },
+        {
+            "subject": "css",
+            "title": "Comentarios en CSS",
+            "content": [
+
+                "Los comentarios son usados para añadir notas explicativas o prevenir que el navegador interprete partes de la hoja de estilos.",
+
+                "Los comentarios se pueden colocar en cualquier espacio en blanco que se permita en la hoja de estilos.",
+
+                "La sintaxis de un comentario es la siguiente:",
+
+                "/* Esto es un comentario en CSS */",
+
+                "La sintaxis de comentarios /* */ es usada para comentarios de una o múltiples líneas.",
+
+                "No hay otra forma de especificar comentarios en hojas de estilos externas. Sin embargo, cuando se usa el elemento <style>, se puede usar <!-- --> para ocultar CSS para navegadores antiguos, aunque no es recomendable.",
+
+                "Como en la mayoría de los lenguajes de programación que usan la sintaxis de comentarios /* */ estos no pueden ser anidados.",
+
+                "En otras palabras, la primera instancia de */ que siga a una instancia de /* cerrará el comentario."
+
+            ],
+            "referencias": [
+                "https://developer.mozilla.org/es/docs/Web/CSS/Comentarios"
+            ]
+        },
+        {
+            "subject": "css",
+            "title": "Sintaxis CSS",
+            "content": [
+
+                "El código CSS es un código escrito con texto, pero también tiene unas normas de escritura (sintaxis), por otra parte bastante lógicas.",
+
+                "En primer lugar, si lo que pretendemos mediante CSS es modificar el estilo de una o varias etiquetas HTML en una página web, deberemos indicar a qué etiqueta o etiquetas afecta la modificación.",
+
+                "Esta parte del código se llama Selector. Para indicar el selector, salvo casos especiales, escribiremos el nombre de la etiqueta o una referencia a ella.",
+
+                "Después tendremos que escribir qué es lo que queremos cambiar de esa etiqueta y cómo. Todo ello formará un bloque, que llamaremos declaración.",
+
+                "En CSS se emplean los signos { y } para delimitar este bloque;( fíjate bien que son llaves). Ejemplo:",
+
+                "h1 { }",
+
+                "Dentro de las llaves escribiremos qué es lo que queremos cambiar y el nuevo valor que le daremos. A lo que queremos cambiar le llamamos propiedad, y lo indicamos mediante una palabra clave.",
+
+                "Cada propiedad tiene un valor (o varios). El valor indica la variación de la propiedad, es decir, en cuanto o en qué ha cambiado la propiedad. Ejemplo:",
+
+                "h1 { font-size : 12px }",
+
+                "Volvemos a definir los términos anteriores, dada su importancia, ya que son la base del lenguaje CSS:",
+                
+                "Regla: cada uno de los estilos que se aplican a una parte de la página en una hoja de estilos CSS. Cada regla está compuesta de una parte de 'selectores', un símbolo de 'llave de apertura' ( { ), otra parte denominada 'declaraciones' y por último, un símbolo de 'llave de cierre' ( } ).",
+
+                "Selector: indica el elemento o elementos HTML a los que se aplica la regla CSS.",
+
+                "Declaración: especifica los estilos que se aplican a los elementos. Está compuesta por una o más propiedades CSS con sus valores.",
+
+                "Propiedad: permite modificar el aspecto de una característica del elemento.",
+
+                "Valor: indica el nuevo valor de la característica modificada en el elemento."
+
+            ],
+            "referencias": [
+                "https://aprende-web.net/css/css1_1.php"
+            ]
+        },
+        {
+            "subject": "css",
+            "title": "Unidades de medida en CSS",
+            "content": [
+
+                "Un paso muy importante en el aprendizaje web es estudiar las unidades, tamaños y medidas que podemos utilizar en CSS.",
+
+                "Las unidades y medidas en CSS están divididas en dos grandes grupos:",
+
+                "1- Unidades Absolutas",
+
+                "2- Unidades Relativas",
+
+                "Unidades absolutas: Como su nombre lo indica, son unidades que están completamente definidas. Esto quiere decir que su valor no depende de otro valor de referencia. En este grupo encontramos los siguientes elementos:",
+
+                "cm: Aumenta el tamaño de nuestro texto o elemento en centímetros.",
+
+                "mm: Aumenta el tamaño de nuestro texto o elemento en milímetros.",
+
+                "in: Aumenta el tamaño de nuestro texto o elemento en pulgadas ( 1in = 96px = 2.54cm )",
+
+                "px: Aumenta el tamaño de nuestro texto en pixeles ( Dependiendo del dispositivo, este elemento se clasifica también en Unidades Relativas. Aunque también depende de la versión de CSS que se maneje ).",
+
+                "pt: Aumenta el tamaño de nuestro texto en puntos ( 1pt = 1/72 de 1in )",
+
+                "pc: Aumenta el tamaño de nuestro texto en picas ( 1pc = 12 puntos aprox )",
+
+                "Unidades relativas: Este tipo de unidad es más flexible y se expresa en forma de porcentaje ( % ). Me refiero a su flexibilidad porque se adapta de acuerdo al tamaño de otro valor de referencia. Ahora bien, las unidades relativas se subdividen en 2 grupos:",
+
+                "1- Relativas a la tipografía",
+                
+                "2- Relativas al viewport",
+
+                "Relativas a la tipografía:",
+
+                "em: Relativo al tamaño de fuente de un elemento. Si, por ejemplo, utilizamos 3em (font-size: 3em); mi texto aumentará 3 veces su tamaño en relación al tamaño que se esté utilizando por defecto.",
+
+                "ex: Aumenta el tamaño de mi letra en cuanto a su altura.",
+
+                "Rem: Es igual a (em) con la diferencia de que este actúa en la raíz. O sea, en la letra que esté utilizando por defecto.",
+
+                "Relativas al viewport (ventana):",
+
+                "vw: Porcentaje relativo a la anchura del viewport.",
+
+                "vh: Porcentaje relativo a la altura del viewport.",
+
+                "vmin: Entre vw y vh toma el que tenga menor valor.",
+
+                "vmax: Entre vw y vh toma el que tenga mayor valor.",
+
+                "Las unidades relativas al viewport son muy importantes y se deben tomar en cuenta cuando realizamos una web para varios tipos de resolución de pantalla."
+
+            ],
+            "referencias": [
+                "https://platzi.com/blog/unidades-de-medida-en-css/"
+            ]
+        },
+        {
+            "subject": "css",
+            "title": "Recomendaciones",
+            "content": [
+
+                "ID y Class: Una de las principales recomendaciones del diseño de páginas XHTML y hojas de estilos CSS está relacionada con los valores asignados a los atributos id y class.",
+
+                "Siempre que sea posible, estos atributos se deben utilizar para mejorar la semántica del documento, es decir, para añadir significado a cada elemento de la página.",
+
+                "Por este motivo, se recomienda que los valores asignados a id y class indiquen la función del elemento y no estén relacionados con su aspecto o su posición.",
+
+                "Elegir el valor adecuado para los atributos id o class es sencillo: si el aspecto de un elemento cambia, el valor de id o class debe seguir siendo adecuado.",
+
+                "Por tanto, evita utilizar valores relacionados con su posición (izquierdo, derecho, primero, segundo, superior, etc.), color ( textoRojo, subrayadoGrisClaro, etc. ) o tipo de letra ( verdana10, arial15px, etc. ).",
+
+                "CLASSitis y DIVitis: Los selectores de CSS permiten prescindir de la mayoría de etiquetas <div> y atributos id y class. Diseñar páginas con exceso de etiquetas <div> no mejora la semántica del documento y sólo consigue complicar el código HTML.",
+
+                "División de los estilos en varios archivos CSS: Normalmente, los estilos de una página compleja se dividen en varios archivos CSS diferentes para hacerlos más manejables.",
+
+                "En primer lugar, se suele utilizar un archivo común que contiene todos los estilos básicos de las páginas HTML del sitio web.",
+
+                "Además, si existe alguna sección especial del sitio web que requiera nuevos estilos, se crea un archivo CSS con todos esos estilos. También es habitual preparar una hoja de estilos específica para impresora y otra preparada para los dispositivos móviles."
+
+            ],
+            "referencias": [
+                "https://uniwebsidad.com/libros/css/capitulo-13/recomendaciones-generales-sobre-css"
+            ]
+        },
+        {
+            "subject": "javascript",
+            "title": "Aún no hay titulo",
+            "content": [
+
+                "Aún no hay contenido."
+
+            ],
+            "referencias": [
+                ""
             ]
         }
     ]
