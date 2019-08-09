@@ -158,6 +158,7 @@ class ConfigurationView extends Component {
       <div className="app-configuration">
         <h1>Configuración</h1>
         <img src={this.state.userAvatar.src} alt="User avatar." style={avatar} />
+        <p style= {{ fontWeight: "bold", fontSize: "1.4em", padding: "10px", margin: "0"}}>Cambiar avatar</p>
         <div>
           {gallery}
         </div>

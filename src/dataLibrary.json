@@ -435,7 +435,7 @@
         },
         {
             "subject": "javascript",
-            "title": "Introducción",
+            "title": "Buenas prácticas",
             "content": [
 
                 "Espacios en blanco — Identación: Normalmente se puede trabajar con identación y espacios en blanco en el código y no es importante para el intérprete puesto que no los toma en cuenta, pero para el programador, esto provee una mejor legibilidad del código.",
