@@ -63,7 +63,7 @@ class RegistrationView extends Component {
     const avatarSelectedId = this.state.userAvatar.id;
     const gallery = this.state.avatarImages.map(({ id, src, description }) => (
       <button key={`button${id}`} onClick={this.pickAvatar} className={avatarSelectedId !== id ? 'avatarUnselected, avatar-btn' : 'avatarSelected,  avatar-btn'}>
-        <img key={id} src={src} alt={description} id={id} />
+        <img key={id} src={src} alt={description} id={id} className="avatar-icons" />
       </button>
     ));
 

@@ -114,7 +114,7 @@ class ConfigurationView extends Component {
       });
 
       const avatar = {
-       width: '50px',
+       width: '100px',
        backgroundColor: 'transparent',
        border: 'none',
        borderBottom: '1px solid white',

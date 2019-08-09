@@ -159,6 +159,10 @@ html {
   margin: 10px;
 }
 
+.avatar-icons {
+  width: 80px;
+}
+
 .username-input {
   display: block;
   width: 100%;
