@@ -18,6 +18,7 @@ class WelcomingView extends Component {
       userSigned: false,
     };
     this.welcomeDecide = this.welcomeDecide.bind(this);
+    this.setInitialScroll = this.setInitialScroll.bind(this);
   }
 
   componentDidMount() {
@@ -26,6 +27,9 @@ class WelcomingView extends Component {
     } else if (localStorage.length > 0) {
       this.setState({ userSigned: true });
     }
+    setTimeout(() => {
+      this.setInitialScroll();
+    }, 500)
   }
 
   welcomeDecide() {
@@ -39,6 +43,10 @@ class WelcomingView extends Component {
     setTimeout(() => {
       window.location.reload();
     }, 1000);
+  }
+
+  setInitialScroll() {
+    window.scrollTo(0, 0);
   }
 
   render() {

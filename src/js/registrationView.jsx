@@ -23,11 +23,15 @@ class RegistrationView extends Component {
     this.usernameKeylog = this.usernameKeylog.bind(this);
     this.submitUsername = this.submitUsername.bind(this);
     this.reloadRender = this.reloadRender.bind(this);
+    this.setInitialScroll = this.setInitialScroll.bind(this);
   }
 
   componentDidMount() {
     const images = loadImages();
     this.setState({ avatarImages: images });
+    setTimeout(() => {
+      this.setInitialScroll();
+    }, 500)
   }
 
   pickAvatar(e) {
@@ -57,6 +61,10 @@ class RegistrationView extends Component {
   // Class method, will Reload window for Rendering new component.
   reloadRender() {
     setTimeout(() => { window.location.reload(); }, 100);
+  }
+
+  setInitialScroll() {
+    window.scrollTo(0, 0);
   }
 
   render() {

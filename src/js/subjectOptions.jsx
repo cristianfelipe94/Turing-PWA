@@ -22,6 +22,13 @@ class SubjectOptions extends Component {
     this.jsSelector = this.jsSelector.bind(this);
 
     this.reloadRender = this.reloadRender.bind(this);
+    this.setInitialScroll = this.setInitialScroll.bind(this);
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setInitialScroll();
+    }, 500)
   }
 
   htmlSelector() {
@@ -49,6 +56,12 @@ class SubjectOptions extends Component {
 
   submitSubject() {
     localStorage.setItem('subjectInformation', JSON.stringify(this.state));
+  }
+
+  setInitialScroll() {
+    window.onbeforeunload = () => {
+      window.scrollTo(0, 0);
+    }
   }
 
   render() {

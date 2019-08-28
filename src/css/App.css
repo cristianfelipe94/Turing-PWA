@@ -6,16 +6,17 @@
 }
 
 html {
-  background-repeat: no-repeat;
   margin: 0;
   padding: 50px;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
-  background-image: linear-gradient(120deg, rgba(58,109,163,1) 0%, rgb(33, 61, 90));
   overflow: auto;
   height: auto;
   color: white;
-  background-size: cover;
+  background: linear-gradient(120deg, rgba(58,109,163,1) 0%, rgb(33, 61, 90));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  scroll-behavior: smooth; 
 }
 
 .bodyGlobal {
@@ -198,4 +199,18 @@ html {
 .subject-icon {
   width: 60px;
   margin: 0 60px;
+}
+
+.subject-container-display {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+}
+
+@media only screen and (min-width: 700px) {
+  .subject-container-display {
+    display: flex;
+    flex-direction: row;
+    margin: 0 10px;
+  }
 }

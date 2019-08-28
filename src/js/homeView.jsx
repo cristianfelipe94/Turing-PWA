@@ -28,6 +28,7 @@ class HomeView extends Component {
     };
 
     this.reloadRender = this.reloadRender.bind(this);
+    this.setInitialScroll = this.setInitialScroll.bind(this);
   }
 
   componentWillMount() {
@@ -114,6 +115,9 @@ class HomeView extends Component {
     setTimeout(() => {
       this.renderLibrary();
     }, 20);
+    setTimeout(() => {
+      this.setInitialScroll();
+    }, 500)
   }
 
   // Class method, will Reload window for Rendering new component.
@@ -132,6 +136,10 @@ class HomeView extends Component {
         });
       }
     });
+  }
+
+  setInitialScroll() {
+    window.scrollTo(0, 0);
   }
 
   render() {
@@ -164,6 +172,21 @@ class HomeView extends Component {
             <br />
             <Link className="app-steps" style={{ margin: '15px' }} to="/#/configuration" onClick={this.reloadRender}>Configuración</Link>
           </Router>
+        </div>
+
+        <div className="app-developers">
+          <p>
+                    Desarrollado por:
+          </p>
+          <div className="app-developers-links">
+            <a className="app-link" href="https://github.com/YethPenado" target="_blank" rel="noopener noreferrer">
+                    Yeth Penado
+            </a>
+            <p style={{ display: 'inline-block' }}>|</p>
+            <a className="app-link" href="https://github.com/cristianfelipe94" target="_blank" rel="noopener noreferrer">
+                    Cristian Calderón
+            </a>
+          </div>
         </div>
       </div>
     );

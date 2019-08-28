@@ -22,6 +22,13 @@ class SubjectView extends Component {
     this.jsSelector = this.jsSelector.bind(this);
 
     this.reloadRender = this.reloadRender.bind(this);
+    this.setInitialScroll = this.setInitialScroll.bind(this);
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setInitialScroll();
+    }, 500)
   }
 
   htmlSelector() {
@@ -57,6 +64,10 @@ class SubjectView extends Component {
     localStorage.setItem('savedUserJSArticle', JSON.stringify(0));
   }
 
+  setInitialScroll() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     const bodyDom = document.querySelector('body');
     bodyDom.setAttribute('class', 'bodyConfig');
@@ -77,6 +88,12 @@ class SubjectView extends Component {
       margin: '0 60px',
     };
 
+    const subjectFlex = {
+      display: 'flex',
+      flexDirection: 'column',
+      margin: '20px auto',
+    }
+
     return (
       <div className="app-subject">
         <div>
@@ -94,7 +111,7 @@ Si eres un estudiante principiante, te recomendamos empezar por estudiar HTML, l
             </p>
           </div>
         </div>
-        <div>
+        <div style={subjectFlex}>
           <div style={subjectContainer} className={this.state.htmlSubject ? 'subjectSelected' : 'subjectEffect'} onClick={this.htmlSelector}>
             <h2 style={{ textAlign: 'center', margin: '15px 0px 5px', fontSize: '20px' }}>HTML</h2>
             <p style={{ textAlign: 'center', padding: '10px', margin: '0' }}>Lenguaje de etiquetas</p>

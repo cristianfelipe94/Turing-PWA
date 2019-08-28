@@ -23,13 +23,14 @@ class ArticleView extends Component {
             dataLibraryToRender : [],
         };
         this.reloadRender = this.reloadRender.bind(this);
-        this.consoleData = this.consoleData.bind(this);
+        // this.consoleData = this.consoleData.bind(this);
+        this.setInitialScroll = this.setInitialScroll.bind(this);
     };
 
-    consoleData () {
-        console.log(this.state.subjectJS);
-        console.log(this.state.subjectToRead);
-    };
+    // consoleData () {
+    //     console.log(this.state.subjectJS);
+    //     console.log(this.state.subjectToRead);
+    // };
 
     componentWillMount() {
         setTimeout(() => {
@@ -50,6 +51,12 @@ class ArticleView extends Component {
             this.setState({ dataLibraryToRender: userStoredData });
         }, 10);
     };
+
+    componentDidMount() {
+        setTimeout(() => {
+          this.setInitialScroll();
+        }, 500)
+    }
 
     // Class method, will Reload window for Rendering new component.
     reloadRender () {
@@ -83,6 +90,10 @@ class ArticleView extends Component {
         }, 20);
     };
 
+    setInitialScroll() {
+        window.scrollTo(0, 0);
+    }
+
     render() {
 
         const bodyDom = document.querySelector('body');
@@ -97,7 +108,7 @@ class ArticleView extends Component {
             return (currentLinks.map(ref => (
                     <div key= {articlekeytitle}>
                         <li style= {{listStyle: 'none', margin: '10px 0px'}}>
-                            <a style= {{textDecoration: 'underline', color: '#9efda2'}} href= {ref} target= '_bank'>{ref}</a>
+                            <a style= {{textDecoration: 'underline', color: '#9efda2', wordBreak: 'break-all'}} href= {ref} target= '_bank'>{ref}</a>
                         </li>
                     </div>
             )));
@@ -111,13 +122,13 @@ class ArticleView extends Component {
 
         return(
             <div className= 'app-article'>
-                <div>
+                <div style={{margin: '20px auto', width: '100%'}}>
                     <p style= {{backgroundColor: '#4dd7a3', display: 'inline-block', padding: '12px', color: 'black'}}>Actualmente leyendo de: <span style={{fontWeight: 'bold'}}>{currentArticleSubject}</span></p>
                     <h2 style= {{textTransform: 'uppercase'}}>{currentArticleTitle}</h2>
                     <p>{currentArticleContent}</p>
                     <ul style={{margin: '30px 0px', padding: '0'}}><span style={{fontWeight: 'bold'}}>Referencias y qué más leer:</span>{currentArticleLinks}</ul>
                 </div>
-                <div>
+                <div style={{margin: '20px auto'}}>
                     <Router>
                         <Link className='app-action' to= '/#/home' onClick= {this.reloadRender}>Cerrar artículo.</Link>
                     </Router>

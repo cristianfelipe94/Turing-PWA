@@ -32,6 +32,8 @@ class ConfigurationView extends Component {
         this.htmlSelector = this.htmlSelector.bind(this);
         this.cssSelector = this.cssSelector.bind(this);
         this.jsSelector = this.jsSelector.bind(this);
+
+        this.setInitialScroll = this.setInitialScroll.bind(this);
     }
 
     componentDidMount() {
@@ -52,6 +54,10 @@ class ConfigurationView extends Component {
             cssSubject: cssUserStored,
             jsSubject: jsUserStored,
         });
+
+        setTimeout(() => {
+            this.setInitialScroll();
+        }, 500)
     }
 
     pickAvatar(e) {
@@ -97,6 +103,10 @@ class ConfigurationView extends Component {
     reloadRender() {
         this.submitUsername();
         setTimeout(() => { window.location.reload(); }, 100);
+    }
+
+    setInitialScroll() {
+        window.scrollTo(0, 0);
     }
 
     render() {
@@ -166,7 +176,10 @@ class ConfigurationView extends Component {
           <label htmlFor='username' style={inputLabel}>Cambiar nombre de usuario:</label>
           <input type="input" id="username" onChange={this.usernameKeylog} value={this.state.userName} style={usernameInput}/>
         </form>
-        <div>
+        <div style={{ fontWeight: "bold", fontSize: "1.4em", padding: "10px", margin: "0px"}}>
+            <p style={{margin: '30px auto 0'}}>Cambiar materia a estudiar:</p>
+        </div>
+        <div className='subject-container-display'>
             <div style={subjectContainer} className={this.state.htmlSubject? 'subjectSelected' : 'subjectEffect'} onClick={this.htmlSelector}>
                 <h2 style={{textAlign: 'center', margin: '15px 0px 5px', fontSize: '20px'}}>HTML</h2>
                 <p style={{textAlign: 'center', padding: '10px', margin: '0'}}>Lenguaje de etiquetas</p>
