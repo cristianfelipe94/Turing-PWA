@@ -6,6 +6,8 @@ import {
     Link
 } from 'react-router-dom';
 
+import '../css/App.css';
+
 import dataLibrary from '../dataLibrary.json';
 
 class ArticleView extends Component {
@@ -53,6 +55,7 @@ class ArticleView extends Component {
     };
 
     componentDidMount() {
+        document.getElementsByTagName('html')[0].className = "htmlBackgroundOff";
         setTimeout(() => {
           this.setInitialScroll();
         }, 500)

@@ -6,6 +6,8 @@ import {
   Link,
 } from 'react-router-dom';
 
+import '../css/App.css';
+
 import '../css/Subject.css';
 
 class SubjectOptions extends Component {
@@ -26,6 +28,7 @@ class SubjectOptions extends Component {
   }
 
   componentDidMount() {
+    document.getElementsByTagName('html')[0].className = "htmlBackgroundOn";
     setTimeout(() => {
       this.setInitialScroll();
     }, 500)

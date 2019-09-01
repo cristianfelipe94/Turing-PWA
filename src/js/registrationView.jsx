@@ -27,6 +27,7 @@ class RegistrationView extends Component {
   }
 
   componentDidMount() {
+    document.getElementsByTagName('html')[0].className = "htmlBackgroundOn";
     const images = loadImages();
     this.setState({ avatarImages: images });
     setTimeout(() => {

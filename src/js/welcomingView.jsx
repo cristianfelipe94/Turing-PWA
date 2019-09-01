@@ -22,6 +22,7 @@ class WelcomingView extends Component {
   }
 
   componentDidMount() {
+    document.getElementsByTagName('html')[0].className = "htmlBackgroundOff";
     if (!localStorage.length) {
       this.setState({ userSigned: false });
     } else if (localStorage.length > 0) {

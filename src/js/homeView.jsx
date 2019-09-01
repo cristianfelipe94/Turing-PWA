@@ -8,7 +8,7 @@ import {
 
 import dataLibrary from '../dataLibrary.json';
 
-import '../css/Home.css';
+import '../css/App.css';
 
 class HomeView extends Component {
   constructor(props) {
@@ -112,6 +112,7 @@ class HomeView extends Component {
   }
 
   componentDidMount() {
+    document.getElementsByTagName('html')[0].className = "htmlBackgroundOff";
     setTimeout(() => {
       this.renderLibrary();
     }, 20);

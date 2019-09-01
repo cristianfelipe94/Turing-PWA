@@ -37,6 +37,7 @@ class ConfigurationView extends Component {
     }
 
     componentDidMount() {
+        document.getElementsByTagName('html')[0].className = "htmlBackgroundOn";
         const images = loadImages();
         const userAvatarStored = JSON.parse(localStorage.getItem('savedAvatar'));
         const userNameStored = JSON.parse(localStorage.getItem('savedUsername'));
