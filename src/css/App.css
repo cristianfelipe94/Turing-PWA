@@ -15,7 +15,7 @@ html {
   color: white;
   background: linear-gradient(120deg, rgba(58,109,163,1) 0%, rgb(33, 61, 90));
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   scroll-behavior: smooth; 
 }
 
